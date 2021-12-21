@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d8fac161-3f06-4c02-b895-1ee90ed37721" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/.expo/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__tests__/app.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/OpenSans-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/OpenSans-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/OpenSans-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/OpenSans-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/OpenSans-Semibold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/OpenSans-SemiboldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/logo-lg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/logo-sm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/splash.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metro.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Button/Button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Button/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Svg/Svg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Svg/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/Routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/navigation/Navigation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/navigation/drawer/Drawer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/navigation/drawer/DrawerMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/navigation/drawer/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/navigation/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/navigation/stacks/HeaderLeft.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/navigation/stacks/HeaderTitle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/navigation/stacks/Stacks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/navigation/stacks/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/navigation/tabs/Tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/navigation/tabs/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenes/details/Details.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenes/details/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenes/home/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenes/home/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenes/profile/Profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenes/profile/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/slices/app.slice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme/colors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme/fonts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme/images.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ignore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn-error.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="21RqSiAzHRxGSoaLCAuql4qNCbi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d8fac161-3f06-4c02-b895-1ee90ed37721" name="Changes" comment="" />
+      <created>1637914249189</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637914249189</updated>
+      <workItem from="1637914250858" duration="242000" />
+      <workItem from="1637914512562" duration="21000" />
+      <workItem from="1637915019413" duration="431000" />
+      <workItem from="1637915455537" duration="19000" />
+      <workItem from="1637915524475" duration="32000" />
+      <workItem from="1637915560448" duration="1000" />
+      <workItem from="1637915651412" duration="120000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pierwszy komit" />
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+</project>

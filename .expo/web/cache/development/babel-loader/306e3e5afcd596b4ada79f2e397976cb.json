@@ -1,0 +1,1 @@
+{"ast":null,"code":"import App from \"./App\";\nexport default App;","map":{"version":3,"sources":["/Users/jakubstawiarz/Desktop/react_native/projekt/src/index.js"],"names":["App"],"mappings":"AAAA,OAAOA,GAAP;AAEA,eAAeA,GAAf","sourcesContent":["import App from './App'\n\nexport default App\n"]},"metadata":{},"sourceType":"module"}
