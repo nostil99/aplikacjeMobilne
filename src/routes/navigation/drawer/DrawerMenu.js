@@ -40,7 +40,7 @@ const DrawerMenu = (props) => (
     <View style={styles.main}>
       <Text>dodaj polise</Text>
         <FontIcon.Button onPress={() =>{
-        
+          
         }}>
           przycisk
         </FontIcon.Button>

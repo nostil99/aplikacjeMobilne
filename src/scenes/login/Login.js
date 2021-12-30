@@ -5,6 +5,7 @@ import {
 } from 'react-native'
 import Button from 'components/Button'
 import { colors } from 'theme'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const styles = StyleSheet.create({
   root: {
@@ -23,16 +24,18 @@ const styles = StyleSheet.create({
 const Details = ({ route, navigation }) => {
   const from = route?.params?.from
   return (
-    <View style={styles.root}>
-      <StatusBar barStyle="light-content" />
-      <Text style={styles.title}>{`Details (from ${from})`}</Text>
-      <Button
-        title="Go Back"
-        color="white"
-        backgroundColor={colors.pink}
-        onPress={navigation.goBack}
-      />
-    </View>
+    <SafeAreaView>
+      <View style={styles.root}>
+        <StatusBar barStyle="light-content" />
+        <Text style={styles.title}>{`Details (from ${from})`}</Text>
+        <Button
+          title="Go Back"
+          color="white"
+          backgroundColor={colors.pink}
+          onPress={navigation.goBack}
+        />
+      </View>
+    </SafeAreaView>
   )
 }
 
