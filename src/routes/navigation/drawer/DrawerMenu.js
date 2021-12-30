@@ -38,7 +38,14 @@ const DrawerMenu = (props) => (
       />
     </View>
     <View style={styles.main}>
-      <Text>Drawer Menu</Text>
+      <Text>dodaj polise</Text>
+        <FontIcon.Button onPress={() =>{
+        
+        }}>
+          przycisk
+        </FontIcon.Button>
+          
+     
     </View>
   </SafeAreaView>
 )
