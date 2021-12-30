@@ -43,7 +43,7 @@ export const HomeNavigator = () => (
       name="Formularz"
       component={Formularz}
       options={({ navigation }) => ({
-        title: 'Home',
+        title: 'Formularz',
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
       })}
@@ -60,11 +60,11 @@ export const ProfileNavigator = () => (
     <Stack.Screen
       name="Profile"
       component={Profile}
-      options={({ navigation }) => ({
-        title: 'Profile',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
-      })}
+      // options={({ navigation }) => ({
+      //   title: 'Profile',
+      //   // headerLeft: () => <HeaderLeft navigation={navigation} />,
+      //   // headerTitle: () => <HeaderTitle />,
+      // })}
     />
     <Stack.Screen
       name="Details"
