@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { colors } from 'theme'
+import Login from 'scenes/login'
 import Home from 'scenes/home'
 import Profile from 'scenes/profile'
 import Formularz from 'scenes/formularz'
 import Details from 'scenes/details'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
+
 
 // ------------------------------------
 // Constants
@@ -17,19 +19,23 @@ const Stack = createStackNavigator()
 const navigationProps = {
   headerTintColor: 'white',
   headerStyle: { backgroundColor: colors.darkPurple },
-  headerTitleStyle: { fontSize: 18 },
-}
+  headerTitleStyle: { fontSize: 18 },}
 
 // ------------------------------------
 // Navigators
 // ------------------------------------
 
+
+
 export const HomeNavigator = () => (
+
+  
   <Stack.Navigator
-    initialRouteName="Home"
+    initialRouteName="Login"
     headerMode="screen"
     screenOptions={navigationProps}
   >
+
     <Stack.Screen
       name="Home"
       component={Home}
@@ -39,6 +45,7 @@ export const HomeNavigator = () => (
         headerTitle: () => <HeaderTitle />,
       })}
     />
+    
     <Stack.Screen
       name="Formularz"
       component={Formularz}
@@ -48,8 +55,19 @@ export const HomeNavigator = () => (
         headerTitle: () => <HeaderTitle />,
       })}
     />
+
+<Stack.Screen
+      name="Login"
+      component={Login}
+      // options={({ navigation }) => ({
+      //   title: 'Login',
+      //   headerLeft: () => <HeaderLeft navigation={navigation} />,
+      //   headerTitle: () => <HeaderTitle />,
+      // })}
+    />
   </Stack.Navigator>
 )
+
 
 export const ProfileNavigator = () => (
   <Stack.Navigator

@@ -13,7 +13,7 @@ const HeaderLeft = ({ navigation }) => (
   <FontIcon.Button
     name="bars"
     color="white"
-    backgroundColor="transparent"
+    backgroundColor="red"
     onPress={() => {
       navigation.openDrawer()
     }}

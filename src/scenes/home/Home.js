@@ -32,6 +32,14 @@ const Home = ({ navigation }) => (
         navigation.navigate('Formularz', { from: 'Home' })
       }}
     />
+        <Button
+      title="zaloguj"
+      color="white"
+      backgroundColor={colors.lightPurple}
+      onPress={() => {
+        navigation.navigate('Login', { from: 'Home' })
+      }}
+    />
   </View>
 )
 

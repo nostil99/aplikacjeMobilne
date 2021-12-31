@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import {
   StyleSheet, Text, View, StatusBar,
 } from 'react-native'
-import Button from 'components/Button'
 import { colors } from 'theme'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { Button, Input as TextInput } from 'native-base'
 
 const styles = StyleSheet.create({
   root: {
@@ -26,13 +26,13 @@ const Details = ({ route, navigation }) => {
   return (
     <SafeAreaView>
       <View style={styles.root}>
-        <StatusBar barStyle="light-content" />
-        <Text style={styles.title}>{`Details (from ${from})`}</Text>
-        <Button
-          title="Go Back"
+        <Button style={styles.title}
+          title="Zaloguj"
           color="white"
           backgroundColor={colors.pink}
-          onPress={navigation.goBack}
+          onPress={() => {
+            navigation.navigate('Home', { from: 'Login' })
+          }}
         />
       </View>
     </SafeAreaView>
