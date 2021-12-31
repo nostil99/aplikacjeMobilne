@@ -12,29 +12,39 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     backgroundColor: colors.lightGrayPurple,
   },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
+  text1: {
+    fontWeight: 'bold',
+    fontSize: 15,
+    marginTop: 50,
   },
+  text2: {
+    fontSize: 15,
+    marginTop: 50,
+  },
+  input: {
+    marginTop: 12.5,
+  }
 })
 
 const Details = ({ route, navigation }) => {
   const [login, setLogin] = useState("");
   const [haslo, setHaslo] = useState("");
+  const [pokazHaslo, setPokazHaslo] = useState(false);
 
   const from = route?.params?.from
   return (
   <View style = {styles.root}>
-    <Text>SYSTEM DO PRZYPOMINANIA O UBEZPIECZENIACH</Text>
-    <Text>LOGOWANIE</Text>
+    <Text style = {styles.text1}>SYSTEM DO PRZYPOMINANIA O UBEZPIECZENIACH</Text>
+    <Text style = {styles.text2}>LOGOWANIE</Text>
 
     <TextInput
-      mx = "3"
+      style = {styles.input}
+      size = "lg"
       value = {login} 
-      placeholder = "Login"
+      placeholder = "LOGIN"
       w = {{
         base: "75%",
         md: "25%",
@@ -45,25 +55,44 @@ const Details = ({ route, navigation }) => {
     />
 
     <TextInput 
+      style = {styles.input}
+      size = "lg"
+      type = {pokazHaslo ? "text" : "password"}
       mx = "3"
       value = {haslo} 
-      placeholder = "Hasło"
+      placeholder = "HASŁO"
       w = {{
         base: "75%",
         md: "25%",
       }}
+      InputRightElement = {
+        <Button 
+          size = "sm"
+          backgroundColor = {colors.darkPurple}
+          rounded = "none"
+          w = "1/4" 
+          h = "full" 
+          onPress = {() => {setPokazHaslo(!pokazHaslo)}}>
+          {pokazHaslo ? "UKRYJ" : "POKAŻ"}
+        </Button>
+      }
       onChangeText={(newText) => {
           setHaslo(newText)
       }}
     />
 
-    <Button marginBottom = "2px" onPress = {() => {
-      if(login != "" && haslo != "") {
-        navigation.navigate('Home', { from: 'Login' })
-        setLogin("");
-        setHaslo("");
-      }
-    }}>ZALOGUJ</Button>
+    <Button 
+      style = {styles.input}
+      size = "md"
+      backgroundColor = {colors.darkPurple} 
+      onPress = {() => {
+        if(login != "" && haslo != "") {
+          navigation.navigate('Home', { from: 'Login' })
+          setLogin("");
+          setHaslo("");
+        }
+      }}>
+    ZALOGUJ</Button>
     
   </View>
   )
