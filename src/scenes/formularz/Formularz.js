@@ -8,7 +8,7 @@ import { Button, Input as TextInput } from 'native-base'
 import { colors } from 'theme'
 // import { TextInput } from 'react-native-gesture-handler'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { onChange } from 'react-native-reanimated'
+
 
 const styles = StyleSheet.create({
   root: {
@@ -31,40 +31,40 @@ const Formularz = ({ route, navigation }) => {
   const [nrPolisy,setNrPolisy] = useState("");
   const from = route?.params?.from
   return (
-  
-    <View style={styles.root}>
-     
-      <Text>podaj imie </Text>
-      <TextInput value = {imie} placeholder="Imie" onChangeText={(newText) => {
-        setImie(newText)
-      }} ></TextInput>
-   
-      <Text>podaj nazwisko </Text>
-      <TextInput value={nazwisko} placeholder="nazwisko" onChangeText={(newText) => {
-        setNazwisko(newText)
-      }}></TextInput>
-      <Text>podaj numer polisy </Text>
-      <TextInput value={nrPolisy} placeholder="nr Polisy" keyboard="numeric" onChangeText= {(newText) => {
-        setNrPolisy(newText)
-      }}></TextInput>
-
-<Text> {imie}</Text>
-<Text> {nazwisko}</Text>
-<Text> {nrPolisy}</Text>
-
-<Button marginBottom="2px">Dodaj</Button>
-<Button marginBottom="2px" onPress = {() => {
-  setImie("");
-  setNazwisko("")
-  setNrPolisy("")
-}}>clear</Button>
-      <Button 
-        onPress={navigation.goBack}
-      >
-        powrót do strony startowej
-      </Button>
-    </View>
+  <SafeAreaView>
+      <View style={styles.root}>
+      
+        <Text>podaj imie </Text>
+        <TextInput value = {imie} placeholder="Imie" onChangeText={(newText) => {
+          setImie(newText)
+        }} ></TextInput>
     
+        <Text>podaj nazwisko </Text>
+        <TextInput value={nazwisko} placeholder="nazwisko" onChangeText={(newText) => {
+          setNazwisko(newText)
+        }}></TextInput>
+        <Text>podaj numer polisy </Text>
+        <TextInput value={nrPolisy} placeholder="nr Polisy" keyboard="numeric" onChangeText= {(newText) => {
+          setNrPolisy(newText)
+        }}></TextInput>
+
+    <Text> {imie}</Text>
+    <Text> {nazwisko}</Text>
+    <Text> {nrPolisy}</Text>
+
+  <Button marginBottom="2px">Dodaj</Button>
+  <Button marginBottom="2px" onPress = {() => {
+    setImie("");
+    setNazwisko("")
+    setNrPolisy("")
+  }}>clear</Button>
+        <Button 
+          onPress={navigation.goBack}
+        >
+          powrót do strony startowej
+        </Button>
+      </View>
+  </SafeAreaView>
   )
 }
 
