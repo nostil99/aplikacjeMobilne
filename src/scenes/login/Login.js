@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import {
   StyleSheet, Text, View, StatusBar,
@@ -22,20 +22,50 @@ const styles = StyleSheet.create({
 })
 
 const Details = ({ route, navigation }) => {
+  const [login, setLogin] = useState("");
+  const [haslo, setHaslo] = useState("");
+
   const from = route?.params?.from
   return (
-    <SafeAreaView>
-      <View style={styles.root}>
-        <Button style={styles.title}
-          title="Zaloguj"
-          color="white"
-          backgroundColor={colors.pink}
-          onPress={() => {
-            navigation.navigate('Home', { from: 'Login' })
-          }}
-        />
-      </View>
-    </SafeAreaView>
+  <View style = {styles.root}>
+    <Text>SYSTEM DO PRZYPOMINANIA O UBEZPIECZENIACH</Text>
+    <Text>LOGOWANIE</Text>
+
+    <TextInput
+      mx = "3"
+      value = {login} 
+      placeholder = "Login"
+      w = {{
+        base: "75%",
+        md: "25%",
+      }}
+      onChangeText={(newText) => {
+          setLogin(newText)
+      }}
+    />
+
+    <TextInput 
+      mx = "3"
+      value = {haslo} 
+      placeholder = "Hasło"
+      w = {{
+        base: "75%",
+        md: "25%",
+      }}
+      onChangeText={(newText) => {
+          setHaslo(newText)
+      }}
+    />
+
+    <Button marginBottom = "2px" onPress = {() => {
+      if(login != "" && haslo != "") {
+        navigation.navigate('Home', { from: 'Login' })
+        setLogin("");
+        setHaslo("");
+      }
+    }}>ZALOGUJ</Button>
+    
+  </View>
   )
 }
 
