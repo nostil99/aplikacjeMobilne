@@ -23,21 +23,13 @@ const styles = StyleSheet.create({
 const Home = ({ navigation }) => (
   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Home</Text>
+    <Text style={styles.title}>Ekran główny</Text>
     <Button
       title="Dodaj polisę OC/ACC do systemu"
       color="white"
-      backgroundColor={colors.lightPurple}
+      backgroundColor={colors.darkPurple}
       onPress={() => {
         navigation.navigate('Formularz', { from: 'Home' })
-      }}
-    />
-        <Button
-      title="zaloguj"
-      color="white"
-      backgroundColor={colors.lightPurple}
-      onPress={() => {
-        navigation.navigate('Login', { from: 'Home' })
       }}
     />
   </View>

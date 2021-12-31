@@ -36,13 +36,14 @@ const Details = ({ route, navigation }) => {
 
   const from = route?.params?.from
   return (
-  <View style = {styles.root}>
+  <SafeAreaView style = {styles.root}>
     <Text style = {styles.text1}>SYSTEM DO PRZYPOMINANIA O UBEZPIECZENIACH</Text>
     <Text style = {styles.text2}>LOGOWANIE</Text>
 
     <TextInput
       style = {styles.input}
       size = "lg"
+      mx = "3"
       value = {login} 
       placeholder = "LOGIN"
       w = {{
@@ -94,7 +95,7 @@ const Details = ({ route, navigation }) => {
       }}>
     ZALOGUJ</Button>
     
-  </View>
+  </SafeAreaView>
   )
 }
 

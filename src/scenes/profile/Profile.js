@@ -23,13 +23,29 @@ const styles = StyleSheet.create({
 const Profile = ({ navigation }) => (
   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Profile</Text>
+    <Text style={styles.title}>Ustawienia konta</Text>
     <Button
-      title="Go to Details"
+      title="Opcja 1"
       color="white"
-      backgroundColor={colors.lightPurple}
+      backgroundColor={colors.darkPurple}
       onPress={() => {
-        navigation.navigate('Details', { from: 'Profile' })
+
+      }}
+    />
+    <Button
+      title="Opcja 2"
+      color="white"
+      backgroundColor={colors.darkPurple}
+      onPress={() => {
+
+      }}
+    />
+    <Button
+      title="Wyloguj"
+      color="white"
+      backgroundColor={colors.darkPurple}
+      onPress={() => {
+        navigation.navigate('Login', { from: 'Profile' })
       }}
     />
   </View>

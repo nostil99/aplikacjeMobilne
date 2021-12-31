@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { View, SafeAreaView, Text } from 'react-native'
-
 import { DrawerActions } from '@react-navigation/native'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from 'theme'
@@ -22,6 +21,9 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  button: {
+    width: 200,
+  },
 }
 
 const DrawerMenu = (props) => (
@@ -38,12 +40,36 @@ const DrawerMenu = (props) => (
       />
     </View>
     <View style={styles.main}>
-      <Text>dodaj polise</Text>
-        <FontIcon.Button onPress={() =>{
-          
-        }}>
-          przycisk
-        </FontIcon.Button>
+        <FontIcon.Button 
+          style={styles.button} 
+          backgroundColor={colors.darkPurple}
+          onPress={() =>{
+          }}>
+        Dodaj polisę</FontIcon.Button>
+        <FontIcon.Button 
+          style={styles.button} 
+          backgroundColor={colors.darkPurple}
+          onPress={() =>{
+          }}>
+        Wyświetl polisy</FontIcon.Button>
+        <FontIcon.Button 
+          style={styles.button} 
+          backgroundColor={colors.darkPurple}
+          onPress={() =>{
+          }}>
+        Wyświetl polisy upływające</FontIcon.Button>
+        <FontIcon.Button 
+          style={styles.button} 
+          backgroundColor={colors.darkPurple}
+          onPress={() =>{
+          }}>
+        Wyświetl samouczek</FontIcon.Button>
+        <FontIcon.Button 
+          style={styles.button} 
+          backgroundColor={colors.darkPurple}
+          onPress={() =>{
+          }}>
+        Wyświetl autorów aplikacji</FontIcon.Button>
           
      
     </View>
