@@ -16,11 +16,12 @@ import HeaderTitle from './HeaderTitle'
 
 const Stack = createStackNavigator()
 
+
 const navigationProps = {
   headerTintColor: 'white',
   headerStyle: { backgroundColor: colors.darkPurple },
   headerTitleStyle: { fontSize: 18 },}
-
+  
 // ------------------------------------
 // Navigators
 // ------------------------------------
@@ -31,15 +32,18 @@ export const HomeNavigator = () => (
 
   
   <Stack.Navigator
-    initialRouteName="Login"
+    initialRouteName="Home"
     headerMode="screen"
     screenOptions={navigationProps}
+    isLogin={false}
   >
+    
 
     <Stack.Screen
       name="Home"
       component={Home}
       options={({ navigation }) => ({
+        
         title: 'Home',
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
@@ -47,8 +51,21 @@ export const HomeNavigator = () => (
     />
     
     <Stack.Screen
+      name="Login"
+      component={Login}
+      
+      options={({ navigation }) => ({
+        title: 'Login',
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
+    />
+    
+    
+    <Stack.Screen
       name="Formularz"
       component={Formularz}
+      disabled={true}
       options={({ navigation }) => ({
         title: 'Formularz',
         headerLeft: () => <HeaderLeft navigation={navigation} />,
@@ -56,15 +73,7 @@ export const HomeNavigator = () => (
       })}
     />
 
-<Stack.Screen
-      name="Login"
-      component={Login}
-      // options={({ navigation }) => ({
-      //   title: 'Login',
-      //   headerLeft: () => <HeaderLeft navigation={navigation} />,
-      //   headerTitle: () => <HeaderTitle />,
-      // })}
-    />
+
   </Stack.Navigator>
 )
 

@@ -5,8 +5,7 @@ import {
 } from 'react-native'
 import { colors } from 'theme'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Button, Input as TextInput } from 'native-base'
-
+import { Button, Input as TextInput, Stack } from 'native-base'
 const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -91,6 +90,7 @@ const Details = ({ route, navigation }) => {
           navigation.navigate('Home', { from: 'Login' })
           setLogin("");
           setHaslo("");
+          
         }
       }}>
     ZALOGUJ</Button>

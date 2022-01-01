@@ -19,6 +19,8 @@ const App = () => {
     await Promise.all([...imageAssets, ...fontAssets])
     setDidLoad(true)
   }
+  
+  
 
   // lifecycle
   useEffect(() => {

@@ -6,7 +6,7 @@ import { NativeBaseProvider } from 'native-base';
 export default () => (
   <NavigationContainer>
     <NativeBaseProvider>
-    <DrawerNavigator />
+   <DrawerNavigator />
     </NativeBaseProvider>
   </NavigationContainer>
 )

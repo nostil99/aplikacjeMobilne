@@ -41,6 +41,10 @@ const DrawerMenu = (props) => (
     </View>
     <View style={styles.main}>
         <FontIcon.Button 
+        onPress= {()=>{
+          props.navigation.push('Home')
+
+        }}
           style={styles.button} 
           backgroundColor={colors.darkPurple}
           onPress={() =>{
