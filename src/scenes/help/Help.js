@@ -15,14 +15,28 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightGrayPurple,
   },
   title: {
-    fontSize: 24,
-    marginBottom: 20,
+    fontSize: 35,
+    marginBottom: 5,
+    marginTop: 5,
+    fontWeight: 'bold',
+    lineHeight: 100,
   },
+  tresc:{
+    marginTop: 5,
+    fontSize:23,
+    lineHeight: 40,
+},
 })
 
 const Help = ({ navigation }) => (
   <View style={styles.root}>
-    <Text>Pomoc</Text>
+    <Text style={styles.title}>POMOC</Text>
+    <Text style={styles.tresc}>Centrum Obsługi</Text>
+    <Text style={styles.tresc}>Mam pytanie</Text>
+    <Text style={styles.tresc}>Centrum Obsługi</Text>
+    <Text style={styles.tresc}>Regulamin</Text>
+    <Text style={styles.tresc}>Polityka Prywatnosci</Text>
+    <Text style={styles.tresc}>Naruszenie Bezpieczeństwa</Text>
   </View>
 )
 

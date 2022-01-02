@@ -15,22 +15,25 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightGrayPurple,
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     marginBottom: 20,
+    lineHeight: 40,
+    fontWeight: 'bold',
   },
 })
 
 const Profile = ({ navigation }) => (
   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Ustawienia konta</Text>
+    <Text style={styles.title}>USTAWIENIA KONTA</Text>
     <Button
       title="Opcja 1"
-      color="white"
+      color="white" 
       backgroundColor={colors.darkPurple}
-      onPress={() => {
+      onPress={() => {}
 
-      }}
+    
+    }
     />
     <Button
       title="Opcja 2"

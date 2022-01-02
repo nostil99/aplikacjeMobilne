@@ -18,20 +18,19 @@ const styles = StyleSheet.create({
     fontSize: 35,
     marginBottom: 20,
     fontWeight: 'bold',
+    lineHeight: 100,
   },
   tresc:{
-      fontSize:23,
-      fontWeight: 'bold',
+      fontSize:27,
+      fontWeight: 'normal',
+      lineHeight: 50,
   },
 })
 
 const Author = ({ navigation }) => (
   <View style={styles.root}>
       <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Autorzy:</Text>
-    <Text> </Text>
-    <Text> </Text>
-    <Text> </Text>
+    <Text style={styles.title}>AUTORZY</Text>
     <Text style={styles.tresc}>Jakub Stawiarz</Text>
     <Text style={styles.tresc}>Natalia Skrzyniarz</Text>
     <Text style={styles.tresc}>Karol Zięba</Text>

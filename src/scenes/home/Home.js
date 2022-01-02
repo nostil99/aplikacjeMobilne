@@ -15,15 +15,16 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightGrayPurple,
   },
   title: {
-    fontSize: 24,
+    fontSize: 34,
     marginBottom: 20,
+    fontWeight: 'bold',
   },
 })
 
 const Home = ({ navigation }) => (
   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Ekran główny</Text>
+    <Text style={styles.title}>WITAJ!</Text>
     <Button
       title="Dodaj polisę OC/ACC do systemu"
       color="white"
