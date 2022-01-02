@@ -8,6 +8,7 @@ import Formularz from 'scenes/formularz'
 import Details from 'scenes/details'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
+import Help from '../../../scenes/help'
 
 
 // ------------------------------------
@@ -100,5 +101,19 @@ export const ProfileNavigator = () => (
         title: 'Details',
       }}
     />
+  </Stack.Navigator>
+)
+
+export const HelpNavigator = () => (
+  <Stack.Navigator
+  initialRouteName="Help"
+  headerMode="screen"
+  screenOptions={navigationProps}>
+    
+    <Stack.Screen
+      name="Help"
+      component={Help}
+      />
+
   </Stack.Navigator>
 )

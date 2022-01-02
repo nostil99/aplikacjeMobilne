@@ -32,7 +32,6 @@ const Details = ({ route, navigation }) => {
   const [login, setLogin] = useState("");
   const [haslo, setHaslo] = useState("");
   const [pokazHaslo, setPokazHaslo] = useState(false);
-
   const from = route?.params?.from
   return (
   <SafeAreaView style = {styles.root}>
@@ -90,7 +89,6 @@ const Details = ({ route, navigation }) => {
           navigation.navigate('Home', { from: 'Login' })
           setLogin("");
           setHaslo("");
-          
         }
       }}>
     ZALOGUJ</Button>

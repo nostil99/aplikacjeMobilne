@@ -6,7 +6,7 @@ import {
 } from '@react-navigation/drawer'
 import DrawerMenu from './DrawerMenu'
 import TabNavigator from '../tabs'
-import { Text } from 'react-native'
+import { HelpNavigator } from '../stacks/Stacks'
 const Drawer = createDrawerNavigator()
 
 const DrawerMenuContainer = (props) => {
@@ -26,8 +26,7 @@ const DrawerNavigator = () => (
   // drawerContent={DrawerMenuContainer}
   >
     <Drawer.Screen name="Home" component={TabNavigator} />
-
-    <Drawer.Screen name="Pomoc" component={() => <Text>Strona pomoc</Text>} />
+    <Drawer.Screen name="Pomoc" component={HelpNavigator} />
   </Drawer.Navigator>
 )
 
