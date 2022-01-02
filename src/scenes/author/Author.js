@@ -15,14 +15,26 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightGrayPurple,
   },
   title: {
-    fontSize: 24,
+    fontSize: 35,
     marginBottom: 20,
+    fontWeight: 'bold',
+  },
+  tresc:{
+      fontSize:23,
+      fontWeight: 'bold',
   },
 })
 
 const Author = ({ navigation }) => (
   <View style={styles.root}>
-    <Text>Autor</Text>
+      <StatusBar barStyle="light-content" />
+    <Text style={styles.title}>Autorzy:</Text>
+    <Text> </Text>
+    <Text> </Text>
+    <Text> </Text>
+    <Text style={styles.tresc}>Jakub Stawiarz</Text>
+    <Text style={styles.tresc}>Natalia Skrzyniarz</Text>
+    <Text style={styles.tresc}>Karol Zięba</Text>
   </View>
 )
 
