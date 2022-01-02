@@ -9,6 +9,7 @@ import Details from 'scenes/details'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
 import Help from '../../../scenes/help'
+import Author from '../../../scenes/author'
 
 
 // ------------------------------------
@@ -125,8 +126,8 @@ export const AuthorNavigator = () => (
   screenOptions={navigationProps}>
     
     <Stack.Screen
-      name="Help"
-      component={Help}
+      name="Author"
+      component={Author}
       />
   </Stack.Navigator>
 )

@@ -20,20 +20,20 @@ const styles = StyleSheet.create({
   },
 })
 
-const Help = ({ navigation }) => (
+const Author = ({ navigation }) => (
   <View style={styles.root}>
-    <Text>Pomoc</Text>
+    <Text>Autor</Text>
   </View>
 )
 
-Help.propTypes = {
+Author.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }),
 }
 
-Help.defaultProps = {
+Author.defaultProps = {
   navigation: { navigate: () => null },
 }
 
-export default Help
+export default Author
