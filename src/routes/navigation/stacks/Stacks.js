@@ -117,3 +117,16 @@ export const HelpNavigator = () => (
 
   </Stack.Navigator>
 )
+
+export const AuthorNavigator = () => (
+  <Stack.Navigator
+  initialRouteName="Author"
+  headerMode="screen"
+  screenOptions={navigationProps}>
+    
+    <Stack.Screen
+      name="Help"
+      component={Help}
+      />
+  </Stack.Navigator>
+)

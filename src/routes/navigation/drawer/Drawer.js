@@ -7,6 +7,7 @@ import {
 import DrawerMenu from './DrawerMenu'
 import TabNavigator from '../tabs'
 import { HelpNavigator } from '../stacks/Stacks'
+import { HelpTabNavigator } from '../tabs/Tabs'
 const Drawer = createDrawerNavigator()
 
 const DrawerMenuContainer = (props) => {
@@ -26,7 +27,7 @@ const DrawerNavigator = () => (
   // drawerContent={DrawerMenuContainer}
   >
     <Drawer.Screen name="Home" component={TabNavigator} />
-    <Drawer.Screen name="Pomoc" component={HelpNavigator} />
+    <Drawer.Screen name="Pomoc" component={HelpTabNavigator} />
   </Drawer.Navigator>
 )
 
