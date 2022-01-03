@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import {
   StyleSheet, Text, View, StatusBar,
 } from 'react-native'
 import Button from 'components/Button'
 import { colors } from 'theme'
-
+import Insurance from '../insurance'
 const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -20,13 +20,19 @@ const styles = StyleSheet.create({
   },
 })
 
+
+
+
 const Details = ({ route, navigation }) => {
   const from = route?.params?.from
+
   return (
     <View style={styles.root}>
       <StatusBar barStyle="light-content" />
       <Text style={styles.title}>{`Details (from ${from})`}</Text>
-      <Text>{list}</Text>
+     <Text>
+      {}
+     </Text>
       <Button
         title="Go Back"
         color="white"

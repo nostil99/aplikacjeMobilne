@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const Details = ({ route, navigation }) => {
+const Login = ({ route, navigation }) => {
   const [login, setLogin] = useState("");
   const [haslo, setHaslo] = useState("");
   const [pokazHaslo, setPokazHaslo] = useState(false);
@@ -97,7 +97,7 @@ const Details = ({ route, navigation }) => {
   )
 }
 
-Details.propTypes = {
+Login.propTypes = {
   route: PropTypes.shape({
     params: PropTypes.shape({ from: PropTypes.string }),
   }),
@@ -106,9 +106,9 @@ Details.propTypes = {
   }),
 }
 
-Details.defaultProps = {
+Login.defaultProps = {
   route: { params: { from: '' } },
   navigation: { goBack: () => null },
 }
 
-export default Details
+export default Login
