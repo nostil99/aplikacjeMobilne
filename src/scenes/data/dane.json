@@ -1,0 +1,39 @@
+{
+    "list": [{
+        "id": 0,
+        "imie": "mgr inż. Mateusz ",
+        "nazwisko": "Pawełkiewicz",
+        "numerPolisy": "12345"  
+    },
+    {
+        "id": 1,
+        "imie": "dr inż. Karol ",
+        "nazwisko": "Wieczorek",
+        "numerPolisy": "345621"  
+    },
+    {
+        "id": 2,
+        "imie": "dr inż. Karol ",
+        "nazwisko": "Syta",
+        "numerPolisy": "3415621"  
+    },
+    {
+        "id": 3,
+        "imie": "programista obiektowy Michał ",
+        "nazwisko": "Saletra",
+        "numerPolisy": "123242"  
+    },
+    {
+        "id": 4,
+        "imie": "Jay ",
+        "nazwisko": "Stawiage",
+        "numerPolisy": "3415621"  
+    },
+    {
+        "id": 5,
+        "imie": "programista obiektowy Michał ",
+        "nazwisko": "Szczerek",
+        "numerPolisy": "123242"  
+    }]
+  }
+  

@@ -10,6 +10,7 @@ import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
 import Help from '../../../scenes/help'
 import Author from '../../../scenes/author'
+import Insurance from '../../../scenes/insurance'
 
 
 // ------------------------------------
@@ -39,8 +40,6 @@ export const HomeNavigator = () => (
     screenOptions={navigationProps}
     isLogin={false}
   >
-    
-
     <Stack.Screen
       name="Home"
       component={Home}
@@ -74,7 +73,16 @@ export const HomeNavigator = () => (
         headerTitle: () => <HeaderTitle />,
       })}
     />
-
+    <Stack.Screen
+      name="Insurance"
+      component={Insurance}
+      disabled={true}
+      options={({ navigation }) => ({
+        title: 'Insurance',
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
+    />
 
   </Stack.Navigator>
 )

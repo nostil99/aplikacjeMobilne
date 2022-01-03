@@ -33,6 +33,14 @@ const Home = ({ navigation }) => (
         navigation.navigate('Formularz', { from: 'Home' })
       }}
     />
+      <Button
+      title="wyswietl polisy"
+      color="white"
+      backgroundColor={colors.darkPurple}
+      onPress={() => {
+        navigation.navigate('Insurance', { from: 'Home' })
+      }}
+    />
   </View>
 )
 
