@@ -26,6 +26,7 @@ const Details = ({ route, navigation }) => {
     <View style={styles.root}>
       <StatusBar barStyle="light-content" />
       <Text style={styles.title}>{`Details (from ${from})`}</Text>
+      <Text>{list}</Text>
       <Button
         title="Go Back"
         color="white"
