@@ -31,9 +31,9 @@ const Lecturers = () => {
                 {list.map((item, index) =>
                     <List.Item onPress={(navigation) => {
                         console.log(list[index])
-                        
+
                     }}
-                    key={index} title={item.imie} />)}
+                    key={index} title={item.imie + item.nazwisko} />)}
             </List.Section>
         </>
     )
