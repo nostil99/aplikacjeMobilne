@@ -11,7 +11,6 @@ const Insurance = ({navigation}) => {
 
     const [list, setList] = useState([]);
     const [filter, setFilter] = useState("");
-    const [elementUbezpieczenie,setElementUbezpieczenie] = useState("");
     const storeData = async (value) => {  
         try {     
          await AsyncStorage.setItem('@storage_Key', value)  
@@ -50,10 +49,9 @@ const Insurance = ({navigation}) => {
                 {list.map((item, index) =>
                     <List.Item onPress={() => {
                         console.log(list[index])
-                        setElementUbezpieczenie(list[index].imie + " " + list[index].nazwisko + " " + list[index].nazwa + " " 
-                        + list[index].numerPolisy + " " )
                         
-                        navigation.navigate('Details', { from: 'Insurance', elementUbezpieczenie })
+                        navigation.navigate('Details',   {item} )
+                        //storeData(index) 
                     }}
                     key={index} title={item.nazwa} />)}
             </List.Section>
@@ -61,7 +59,7 @@ const Insurance = ({navigation}) => {
           
                 <View>
                     <Text>
-                        {elementUbezpieczenie}
+                     
                     </Text>
                 </View>
            

@@ -38,18 +38,22 @@ const Details = ({ route, navigation }) => {
      }
    
     }
-  
+    const value = route?.params?.item
   return (
     
 
 
     <View style={styles.root}>
       <StatusBar barStyle="light-content" />
-      <Text style={styles.title}>{`Details (from ${from})`}</Text>
+      {/* <Text style={styles.title}>{`Details (from ${from})`}</Text> */}
      <Text>
-      {/* {getData()} */}
-      {route.params.elementUbezpieczenie}
-      {JSON.stringify(route.params)}
+      {"imie:"+JSON.stringify( value.imie)}
+     </Text>
+     <Text>
+      {"nazwisko:"+ JSON.stringify( value.nazwisko)}
+     </Text>
+     <Text>
+      {"nazwa:"+ JSON.stringify( value.nazwa)}
      </Text>
       <Button
         title="Go Back"
