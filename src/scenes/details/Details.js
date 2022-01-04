@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
   },
+
 })
 
 
@@ -46,14 +47,22 @@ const Details = ({ route, navigation }) => {
     <View style={styles.root}>
       <StatusBar barStyle="light-content" />
       {/* <Text style={styles.title}>{`Details (from ${from})`}</Text> */}
-     <Text>
-      {"imie:"+JSON.stringify( value.imie)}
+      <Text style={styles.title
+      }>
+      {value.nazwa}
      </Text>
      <Text>
-      {"nazwisko:"+ JSON.stringify( value.nazwisko)}
+      {"imie: "+ value.imie}
      </Text>
      <Text>
-      {"nazwa:"+ JSON.stringify( value.nazwa)}
+      {"nazwisko:"+  value.nazwisko}
+     </Text>
+   
+     <Text>
+      {"data startu polisy:"+  value.dataRozpoczecia}
+     </Text>
+     <Text>
+      {"data zakonczenia polisy:"+  value.dataZakonczenia}
      </Text>
       <Button
         title="Go Back"

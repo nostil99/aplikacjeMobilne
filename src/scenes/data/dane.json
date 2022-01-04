@@ -4,6 +4,8 @@
         "nazwa": "polisa audi",
         "imie": "mgr inż. Mateusz ",
         "nazwisko": "Pawełkiewicz",
+        "dataRozpoczecia": "21.01.2021",
+        "dataZakonczenia": "21.01.2022",
         "numerPolisy": "12345"  
     },
     {
@@ -11,6 +13,8 @@
         "nazwa": "polisa bmw",
         "imie": "dr inż. Karol ",
         "nazwisko": "Wieczorek",
+        "dataRozpoczecia": "21.01.2021",
+        "dataZakonczenia": "21.01.2022",
         "numerPolisy": "345621"  
     },
     {
@@ -18,6 +22,8 @@
         "nazwa": "polisa mercedes",
         "imie": "dr inż. Karol ",
         "nazwisko": "Syta",
+        "dataRozpoczecia": "21.01.2021",
+        "dataZakonczenia": "21.01.2022",
         "numerPolisy": "3415621"  
     },
     {
@@ -25,20 +31,26 @@
         "nazwa": "polisa opel",
         "imie": "programista obiektowy Michał ",
         "nazwisko": "Saletra",
+        "dataRozpoczecia": "21.01.2021",
+        "dataZakonczenia": "21.01.2022",
         "numerPolisy": "123242"  
     },
     {
         "id": 4,
-        "nazwa": "polisa skoda",
-        "imie": "Jay ",
+        "nazwa": "polisa lamborghini",
+        "imie": "prof. hab. prezes Jay ",
         "nazwisko": "Stawiage",
+        "dataRozpoczecia": "21.01.2021",
+        "dataZakonczenia": "21.01.2022",
         "numerPolisy": "3415621"  
     },
     {
         "id": 5,
         "nazwa": "polisa honda",
-        "imie": "programista obiektowy Michał ",
+        "imie": "prof. hab. programista obiektowy Michał ",
         "nazwisko": "Szczerek",
+        "dataRozpoczecia": "21.01.2021",
+        "dataZakonczenia": "21.01.2022",
         "numerPolisy": "123242"  
     }]
   }
