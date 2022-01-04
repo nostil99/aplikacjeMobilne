@@ -10,7 +10,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const Insurance = ({navigation}) => {
 
     const [list, setList] = useState([]);
-    const [filter, setFilter] = useState("");
+    const [filterr, setFilter] = useState("");
     const storeData = async (value) => {  
         try {     
          await AsyncStorage.setItem('@storage_Key', value)  
@@ -23,23 +23,20 @@ const Insurance = ({navigation}) => {
 
 
 
-    
         
     useEffect(() => {
         setList(dane.list.filter((dane) => {
-            return dane.nazwa.indexOf(filter) !== -1 
+            return dane.nazwa.indexOf(filterr) !== -1 
         }))
         
-    }, [filter])
+    }, [filterr])
     
 
-
-    
     return(
         <>
             <TextInput
                 label="szukaj"
-                value={filter}
+                value={filterr}
                 onChangeText={(newText) => {
                     setFilter(newText.toLowerCase())
 
@@ -49,7 +46,7 @@ const Insurance = ({navigation}) => {
                 {list.map((item, index) =>
                     <List.Item onPress={() => {
                         console.log(list[index])
-                        
+                        storeData(item)
                         navigation.navigate('Details',   {item} )
                         //storeData(index) 
                     }}
