@@ -27,11 +27,17 @@ const styles = StyleSheet.create({
    
 const Details = ({ route, navigation }) => {
   const from = route?.params?.from
+
+  const [ubez,setUbez] = useState("")
+  useEffect(()=>{
+      getData()
+  },[])
   const getData = async () => {  
     try {    
       const value = await AsyncStorage.getItem('@storage_Key')  
     if(value !== null) { 
-           return value   
+          console.log(value)
+          setUbez(value)
      }  
      console.log("odbiera")
     } catch(e) {    
@@ -47,7 +53,7 @@ const Details = ({ route, navigation }) => {
     <View style={styles.root}>
       <StatusBar barStyle="light-content" />
       {/* <Text style={styles.title}>{`Details (from ${from})`}</Text> */}
-      <Text style={styles.title
+      {/* <Text style={styles.title
       }>
       {value.nazwa}
      </Text>
@@ -63,7 +69,15 @@ const Details = ({ route, navigation }) => {
      </Text>
      <Text>
       {"data zakonczenia polisy:"+  value.dataZakonczenia}
-     </Text>
+     </Text> */}
+   <Text>
+     {ubez}
+   </Text>
+
+
+     
+   
+       
       <Button
         title="Go Back"
         color="white"
