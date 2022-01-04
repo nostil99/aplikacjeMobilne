@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from "react";
 import dane from "../data/dane.json"
 import { List, TextInput,Text } from 'react-native-paper';
-import { SafeAreaView } from "react-native-safe-area-context";
 import { View } from "react-native";
 import PropTypes from 'prop-types'
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 
 const Insurance = ({navigation}) => {
@@ -11,14 +12,30 @@ const Insurance = ({navigation}) => {
     const [list, setList] = useState([]);
     const [filter, setFilter] = useState("");
     const [elementUbezpieczenie,setElementUbezpieczenie] = useState("");
+    const storeData = async (value) => {  
+        try {     
+         await AsyncStorage.setItem('@storage_Key', value)  
+        } catch (e) 
+        { 
+            // saving error  
+        }
+       
+    }
 
+
+
+    
+        
     useEffect(() => {
         setList(dane.list.filter((dane) => {
             return dane.nazwa.indexOf(filter) !== -1 
         }))
-        setElementUbezpieczenie("")
+        
     }, [filter])
+    
 
+
+    
     return(
         <>
             <TextInput
@@ -32,11 +49,11 @@ const Insurance = ({navigation}) => {
             <List.Section title="lista polis">
                 {list.map((item, index) =>
                     <List.Item onPress={() => {
-                 
                         console.log(list[index])
                         setElementUbezpieczenie(list[index].imie + " " + list[index].nazwisko + " " + list[index].nazwa + " " 
                         + list[index].numerPolisy + " " )
-                        navigation.navigate('Details', { from: 'Insurance' })
+                        
+                        navigation.navigate('Details', { from: 'Insurance', elementUbezpieczenie })
                     }}
                     key={index} title={item.nazwa} />)}
             </List.Section>
@@ -66,4 +83,4 @@ Insurance.propTypes = {
     route: { params: { from: '' } },
     navigation: { goBack: () => null },
   }
-export default Insurance;
+export default Insurance

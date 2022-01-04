@@ -5,7 +5,7 @@ import {
 } from 'react-native'
 import Button from 'components/Button'
 import { colors } from 'theme'
-import Insurance from '../insurance'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -23,15 +23,33 @@ const styles = StyleSheet.create({
 
 
 
+   
 const Details = ({ route, navigation }) => {
   const from = route?.params?.from
-
+  const getData = async () => {  
+    try {    
+      const value = await AsyncStorage.getItem('@storage_Key')  
+    if(value !== null) { 
+           return value   
+     }  
+     console.log("odbiera")
+    } catch(e) {    
+      // error reading value 
+     }
+   
+    }
+  
   return (
+    
+
+
     <View style={styles.root}>
       <StatusBar barStyle="light-content" />
       <Text style={styles.title}>{`Details (from ${from})`}</Text>
      <Text>
-      {}
+      {/* {getData()} */}
+      {route.params.elementUbezpieczenie}
+      {JSON.stringify(route.params)}
      </Text>
       <Button
         title="Go Back"
