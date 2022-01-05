@@ -40,7 +40,7 @@ const DrawerMenu = (props) => (
       />
     
     </View>
-    {/* <View style={styles.main}>
+    <View style={styles.main}>
         <FontIcon.Button 
         onPress= {()=>{
           props.navigation.push('Home')
@@ -77,7 +77,7 @@ const DrawerMenu = (props) => (
         Wyświetl autorów aplikacji</FontIcon.Button>
           
      
-    </View> */}
+    </View>
   </SafeAreaView>
 )
 
