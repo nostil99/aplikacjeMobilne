@@ -6,6 +6,8 @@ import {
 import { colors } from 'theme'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Button, Input as TextInput, Stack } from 'native-base'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../../firebase/firebase'
 const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -84,11 +86,16 @@ const Login = ({ route, navigation }) => {
       style = {styles.input}
       size = "md"
       backgroundColor = {colors.darkPurple} 
-      onPress = {() => {
+      onPress = {async () => {
         if(login != "" && haslo != "") {
-          navigation.navigate('Home', { from: 'Login' })
-          setLogin("");
-          setHaslo("");
+          try {
+            await signInWithEmailAndPassword(auth, login, haslo)
+            navigation.navigate('Home', { from: 'Login' })
+          } catch (error) {
+
+          }
+          // setLogin("");
+          // setHaslo("");
         }
       }}>
     ZALOGUJ</Button>

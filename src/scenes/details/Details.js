@@ -28,13 +28,13 @@ const styles = StyleSheet.create({
 const Details = ({ route, navigation }) => {
   const from = route?.params?.from
 
-  // const [ubez,setUbez] = useState("")
-  // useEffect(()=>{
-  //     getData()
-  // },[])
+  const [ubez,setUbez] = useState([])
+  useEffect(()=>{
+      getData()
+  },[])
   const getData = async () => {  
     try {    
-      const value = await AsyncStorage.getItem('@storage_Key')  
+      const value = await AsyncStorage.getItem('storage_Key')  
     if(value !== null) { 
           console.log(value)
           setUbez(value)
@@ -46,7 +46,7 @@ const Details = ({ route, navigation }) => {
    
     }
 
-    const value = route?.params?.item
+    //const value = route?.params?.item
   return (
     
 
@@ -56,20 +56,20 @@ const Details = ({ route, navigation }) => {
       {/* <Text style={styles.title}>{`Details (from ${from})`}</Text> */}
        <Text style={styles.title
       }>
-      {value.nazwa}
+      {ubez.nazwa}
      </Text>
      <Text>
-      {"imie: "+ value.imie}
+      {"imie: "+ ubez.imie}
      </Text>
      <Text>
-      {"nazwisko:"+  value.nazwisko}
+      {"nazwisko:"+  ubez.nazwisko}
      </Text>
    
      <Text>
-      {"data startu polisy:"+  value.dataRozpoczecia}
+      {"data startu polisy:"+  ubez.dataRozpoczecia}
      </Text>
      <Text>
-      {"data zakonczenia polisy:"+  value.dataZakonczenia}
+      {"data zakonczenia polisy:"+  ubez.dataZakonczenia}
      </Text> 
 
 

@@ -35,7 +35,7 @@ export const HomeNavigator = () => (
 
   
   <Stack.Navigator
-    initialRouteName="Home"
+    initialRouteName="Login"
     headerMode="screen"
     screenOptions={navigationProps}
     isLogin={false}

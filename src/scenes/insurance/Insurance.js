@@ -13,23 +13,19 @@ const Insurance = ({navigation}) => {
     const [filter, setFilter] = useState("");
     const storeData = async (value) => {  
         try {     
-         await AsyncStorage.setItem('@storage_Key', value)  
+         await AsyncStorage.setItem('storage_Key', value)  
+         //navigation.navigate('Details' )
+         console.log("pobranie async")
         } catch (e) 
         { 
             // saving error  
         }
-       
     }
 
-
-
-    
-        
     useEffect(() => {
         setList(dane.list.filter((dane) => {
             return dane.nazwa.indexOf(filter) !== -1 
         }))
-        
     }, [filter])
     
 
@@ -49,10 +45,11 @@ const Insurance = ({navigation}) => {
             <List.Section title="lista polis">
                 {list.map((item, index) =>
                     <List.Item onPress={() => {
-                        console.log(list[index])
+                        //console.log(list[index])
+                        storeData(item) 
+                        //setUbezpieczenie(item)
                         
-                        navigation.navigate('Details',   {item} )
-                        //storeData(index) 
+                        
                     }}
                     key={index} title={item.nazwa}
                      />)}
