@@ -13,8 +13,9 @@ const Insurance = ({navigation}) => {
     const [filter, setFilter] = useState("");
     const storeData = async (value) => {  
         try {     
-         await AsyncStorage.setItem('storage_Key', value)  
-         //navigation.navigate('Details' )
+        const jsonValue = JSON.stringify(value)
+         await AsyncStorage.setItem('storage_Key', jsonValue)  
+         navigation.navigate('Details' )
          console.log("pobranie async")
         } catch (e) 
         { 

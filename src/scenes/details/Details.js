@@ -37,7 +37,8 @@ const Details = ({ route, navigation }) => {
       const value = await AsyncStorage.getItem('storage_Key')  
     if(value !== null) { 
           console.log(value)
-          setUbez(value)
+          
+          setUbez(JSON.parse(value))
      }  
      console.log("odbiera")
     } catch(e) {    
