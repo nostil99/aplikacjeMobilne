@@ -25,7 +25,7 @@ const Insurance = ({navigation}) => {
 
     useEffect(() => {
         setList(dane.list.filter((dane) => {
-            return dane.nazwa.indexOf(filter) !== -1 
+            return dane.nazwa.replace(/\s/g, '').toLowerCase().indexOf(filter.replace(/\s/g, '').toLowerCase()) !== -1 
         }))
     }, [filter])
     
@@ -38,7 +38,7 @@ const Insurance = ({navigation}) => {
                 label="szukaj"
                 value={filter}
                 onChangeText={(newText) => {
-                    setFilter(newText.toLowerCase())
+                    setFilter(newText)
 
                 }}
             />
