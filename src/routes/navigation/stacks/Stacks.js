@@ -11,6 +11,7 @@ import HeaderTitle from './HeaderTitle'
 import Help from '../../../scenes/help'
 import Author from '../../../scenes/author'
 import Insurance from '../../../scenes/insurance'
+import Camera from '../../../scenes/camera'
 
 
 // ------------------------------------
@@ -84,9 +85,20 @@ export const HomeNavigator = () => (
       })}
     />
 
-<Stack.Screen
+    <Stack.Screen
       name="Details"
       component={Details}
+      disabled={true}
+      // options={({ navigation }) => ({
+      //   title: 'Details',
+      //   headerLeft: () => <HeaderLeft navigation={navigation} />,
+      //   headerTitle: () => <HeaderTitle />,
+      // })}
+    />
+
+    <Stack.Screen
+      name="Camera"
+      component={Camera}
       disabled={true}
       // options={({ navigation }) => ({
       //   title: 'Details',

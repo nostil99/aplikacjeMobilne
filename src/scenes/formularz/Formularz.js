@@ -89,7 +89,7 @@ const Formularz = ({ route, navigation }) => {
       size = "md"
       backgroundColor = {colors.darkPurple} 
       onPress = {() => {
-
+        navigation.navigate('Camera')
       }}>
     ZRÓB ZDJĘCIE</Button>
 
