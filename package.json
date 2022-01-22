@@ -8,7 +8,8 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "lint": "node_modules/.bin/eslint src/ --fix src/ --fix",
-    "test": "node_modules/.bin/jest --passWithNoTests"
+    "test": "node_modules/.bin/jest --passWithNoTests",
+    "server": "json-server --port 3001 --watch baza.json"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.14",
@@ -21,11 +22,13 @@
     "axios": "^0.21.1",
     "expo": "^42.0.0",
     "expo-asset": "~8.3.3",
+    "expo-camera": "~11.2.2",
     "expo-cli": "^4.11.0",
     "expo-file-system": "~11.1.3",
     "expo-font": "~9.2.1",
     "firebase": "^9.6.2",
     "global": "^4.4.0",
+    "json-server": "^0.17.0",
     "moment": "^2.24.0",
     "native-base": "^3.2.2",
     "prop-types": "^15.7.2",

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import * as FileSystem from 'expo-file-system';
 import PropTypes from 'prop-types'
 import {
   StyleSheet, Text, View, StatusBar,
@@ -7,6 +6,7 @@ import {
 import { colors } from 'theme'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Button, Input as TextInput, Stack } from 'native-base'
+import axios from 'axios';
 
 const styles = StyleSheet.create({
   root: {
@@ -31,14 +31,57 @@ const styles = StyleSheet.create({
 })
 
 const Formularz = ({ route, navigation }) => {
+  const [nazwa, setNazwa]= useState("");
   const [imie, setImie]= useState("");
   const [nazwisko, setNazwisko] = useState("");
   const [nrPolisy, setNrPolisy] = useState("");
-  const [dataDodania, setDataDodania] = useState("");
+  const [data1, setData1] = useState("");
+  const [data2, setData2] = useState("");
+
+  const dodajPolise = () => {
+    axios.post("http://10.0.2.2:3001/rekordy", {
+      nazwa: nazwa,
+      imie: imie,
+      nazwisko: nazwisko,
+      nrpolisy: nrPolisy,
+      dataRozpoczecia: data1,
+      dataZakonczenia: data2
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+    alert('Dodano polisę o następujących danych:\n' + "Nazwa: " + nazwa + "\nImię: " + imie + "\nNazwisko: " + nazwisko + "\nNumer polisy: " + nrPolisy + "\nData rozpoczęcia: " + data1 + "\nData zakończenia: " + data2);
+
+    setNazwa("");
+    setImie("");
+    setNazwisko("");
+    setNrPolisy("");
+    setData1("");
+    setData2("");
+  };
 
   const from = route?.params?.from
   return (
   <SafeAreaView style = {styles.root}>
+    <TextInput
+      style = {styles.input}
+      size = "lg"
+      mx = "3"
+      value = {nazwa} 
+      placeholder = "Nazwa"
+      w = {{
+        base: "75%",
+        md: "25%",
+      }}
+      onChangeText={(newText) => {
+          setNazwa(newText)
+      }}
+    />
+
     <TextInput
       style = {styles.input}
       size = "lg"
@@ -84,6 +127,36 @@ const Formularz = ({ route, navigation }) => {
       }}
     />
 
+    <TextInput
+      style = {styles.input}
+      size = "lg"
+      mx = "3"
+      value = {data1} 
+      placeholder = "Data rozpoczęcia"
+      w = {{
+        base: "75%",
+        md: "25%",
+      }}
+      onChangeText={(newText) => {
+          setData1(newText)
+      }}
+    />
+
+    <TextInput
+      style = {styles.input}
+      size = "lg"
+      mx = "3"
+      value = {data2} 
+      placeholder = "Data zakończenia"
+      w = {{
+        base: "75%",
+        md: "25%",
+      }}
+      onChangeText={(newText) => {
+          setData2(newText)
+      }}
+    />
+
     <Button 
       style = {styles.input}
       size = "md"
@@ -98,21 +171,8 @@ const Formularz = ({ route, navigation }) => {
       size = "md"
       backgroundColor = {colors.darkPurple} 
       onPress = {() => {
-        if(imie != "" && nazwisko != "" && nrPolisy != "") {
-          setDataDodania(new Date(Date.now()));
-          var sciezka = FileSystem.documentDirectory + (imie + "_" + nazwisko + "_" + nrPolisy + "_" + dataDodania + ".json");
-
-          FileSystem.writeAsStringAsync(sciezka, "{\"imie\": \"" + imie + "\",\n\"nazwisko\": \"" + nazwisko + "\",\n\"nrPolisy\": \"" + nrPolisy + "\",\n\"dataDodania\": \"" + dataDodania + "\"}");
-
-          var dodanaPolisa = FileSystem.readAsStringAsync(sciezka);
-          dodanaPolisa.then((zawartosc) => {
-            var dane = JSON.parse(zawartosc);
-            alert('Dodano polisę o następujących danych:\n' + "Imię: " + dane.imie + "\nNazwisko: " + dane.nazwisko + "\nNumer polisy: " + dane.nrPolisy + "\nData dodania: " + dane.dataDodania);
-          });
-
-          setImie("");
-          setNazwisko("");
-          setNrPolisy("");
+        if(nazwa != "" && imie != "" && nazwisko != "" && nrPolisy != "" && data1 != "" && data2 != "") {
+          dodajPolise();
         }
       }}>
     DODAJ POLISĘ</Button>
@@ -122,9 +182,12 @@ const Formularz = ({ route, navigation }) => {
       size = "md"
       backgroundColor = {colors.darkPurple} 
       onPress = {() => {
+        setNazwa("");
         setImie("");
         setNazwisko("");
         setNrPolisy("");
+        setData1("");
+        setData2("");
       }}>
     WYCZYŚĆ FORMULARZ</Button>
 
