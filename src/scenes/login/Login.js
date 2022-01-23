@@ -18,15 +18,20 @@ const styles = StyleSheet.create({
   },
   text1: {
     fontWeight: 'bold',
-    fontSize: 15,
+    fontSize: 25,
     marginTop: 50,
+    textAlign: 'center',
   },
   text2: {
-    fontSize: 15,
+    fontSize: 20,
     marginTop: 50,
+    fontWeight: 'bold',
   },
   input: {
-    marginTop: 12.5,
+    marginTop: 20,
+   
+    marginBottom: 5,
+    
   }
 })
 
@@ -42,6 +47,7 @@ const Login = ({ route, navigation }) => {
 
     <TextInput
       style = {styles.input}
+      paddingTop='30'
       size = "lg"
       mx = "3"
       value = {login} 
@@ -84,7 +90,7 @@ const Login = ({ route, navigation }) => {
 
     <Button 
       style = {styles.input}
-      size = "md"
+      size = "lg"
       backgroundColor = {colors.darkPurple} 
       onPress = {async () => {
         if(login != "" && haslo != "") {

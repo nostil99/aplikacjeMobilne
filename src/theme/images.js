@@ -1,7 +1,7 @@
 import { Asset } from 'expo-asset'
 
 // svg
-import Logo from '../../assets/images/logo.svg'
+import Logo from '../../assets/images/OC.png'
 
 export const svgs = {
   logo: Logo,
@@ -9,8 +9,8 @@ export const svgs = {
 
 // png/jpeg
 export const images = {
-  logo_sm: require('../../assets/images/logo.png'),
-  logo_lg: require('../../assets/images/logo.png'),
+  logo_sm: require('../../assets/images/car22.png'),
+  logo_lg: require('../../assets/images/car22.png'),
 }
 
 // image preloading

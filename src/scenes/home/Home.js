@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontWeight: 'bold',
   },
+  przycisk:{
+    margin:10
+  }
 })
 
 const Home = ({ navigation }) => (
@@ -26,6 +29,7 @@ const Home = ({ navigation }) => (
     <StatusBar barStyle="light-content" />
     <Text style={styles.title}>WITAJ!</Text>
     <Button
+      style={styles.przycisk}
       title="Dodaj polisę OC/ACC do systemu"
       color="white"
       backgroundColor={colors.darkPurple}
@@ -34,7 +38,7 @@ const Home = ({ navigation }) => (
       }}
     />
       <Button
-      title="wyswietl polisy"
+      title="Wyswietl polisy"
       color="white"
       backgroundColor={colors.darkPurple}
       onPress={() => {
