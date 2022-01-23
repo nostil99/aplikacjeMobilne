@@ -1,4 +1,5 @@
 import React from 'react'
+import {useState } from 'react'
 import PropTypes from 'prop-types'
 import {
   StyleSheet, Text, View, StatusBar, Image, 
@@ -6,6 +7,7 @@ import {
 import Button from 'components/Button'
 import { colors } from 'theme'
 import { AutoFocus } from 'expo-camera/build/Camera.types'
+import {Change} from './ZmianaNazwy'
 
 const styles = StyleSheet.create({
   root: {
@@ -39,7 +41,6 @@ const styles = StyleSheet.create({
     width: 200,
   }
 })
-
 const Profile = ({ navigation }) => (
   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
@@ -48,7 +49,7 @@ const Profile = ({ navigation }) => (
         source={require('../../../assets/images/logo-xD.png')}
       />
     <Text style={styles.profil}>Jakub Stawiarz</Text>
-      
+    
     <Text style={styles.title}>USTAWIENIA KONTA</Text>
     <Button
       title="Zmień Nazwę"
