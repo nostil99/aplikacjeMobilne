@@ -12,6 +12,7 @@ import Help from '../../../scenes/help'
 import Author from '../../../scenes/author'
 import Insurance from '../../../scenes/insurance'
 import Camera from '../../../scenes/camera'
+import ZmianaNazwy from '../../../scenes/zmianaNazwy'
 
 
 // ------------------------------------
@@ -36,7 +37,7 @@ export const HomeNavigator = () => (
 
   
   <Stack.Navigator
-    initialRouteName="Login"
+    initialRouteName="Home"
     headerMode="screen"
     screenOptions={navigationProps}
     isLogin={false}
@@ -130,6 +131,13 @@ export const ProfileNavigator = () => (
       component={Details}
       options={{
         title: 'Details',
+      }}
+    />
+        <Stack.Screen
+      name="ZmianaNazwy"
+      component={ZmianaNazwy}
+      options={{
+        title: 'ZmianaNazwy',
       }}
     />
   </Stack.Navigator>

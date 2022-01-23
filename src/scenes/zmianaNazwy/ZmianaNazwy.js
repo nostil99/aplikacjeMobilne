@@ -1,9 +1,11 @@
+import React from 'react'
 import { useState } from "react"
 import { View } from "react-native"
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler"
+import PropTypes from 'prop-types'
 
-const Change =({zmiana})=>{
-    const [name, setname]= useState
+const ZmianaNazwy =({zmiana})=>{
+    const [name, setname]= useState("")
     const onclick =()=> {
         zmiana(name) 
         setname('')
@@ -15,4 +17,11 @@ const Change =({zmiana})=>{
     </View>)
 }
 
-export default Change
+ZmianaNazwy.propTypes = {
+    navigation: PropTypes.shape({ navigate: PropTypes.func }),
+  }
+  
+  ZmianaNazwy.defaultProps = {
+    navigation: { navigate: () => null },
+  }
+export default ZmianaNazwy

@@ -7,7 +7,7 @@ import {
 import Button from 'components/Button'
 import { colors } from 'theme'
 import { AutoFocus } from 'expo-camera/build/Camera.types'
-import {Change} from './ZmianaNazwy'
+
 
 const styles = StyleSheet.create({
   root: {
@@ -56,7 +56,10 @@ const Profile = ({ navigation }) => (
       color="white"
       style={styles.przycisk}
       backgroundColor={colors.darkPurple}
-      onPress={() => {}
+      onPress={() => {
+
+        navigation.navigate('ZmianaNazwy', { from: 'Profile' })
+      }
     }
     />
     <Button
