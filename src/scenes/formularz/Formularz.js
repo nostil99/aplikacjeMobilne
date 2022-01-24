@@ -37,9 +37,9 @@ const Formularz = ({ route, navigation }) => {
   const [nrPolisy, setNrPolisy] = useState("");
   const [data1, setData1] = useState("");
   const [data2, setData2] = useState("");
-
+  const host = Platform.OS === 'ios' ? "http://localhost:3001/rekordy" : "http://10.0.2.2:3001/rekordy"
   const dodajPolise = () => {
-    axios.post("http://10.0.2.2:3001/rekordy", {
+    axios.post(host, {
       nazwa: nazwa,
       imie: imie,
       nazwisko: nazwisko,
