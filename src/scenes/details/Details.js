@@ -6,6 +6,7 @@ import {
 import Button from 'components/Button'
 import { colors } from 'theme'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
 const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
    
 const Details = ({ route, navigation }) => {
   const from = route?.params?.from
-
+  const axios = require('axios');
   const [ubez,setUbez] = useState([])
   useEffect(()=>{
       getData()
@@ -46,7 +47,18 @@ const Details = ({ route, navigation }) => {
      }
    
     }
+    const host = Platform.OS === 'ios' ? "http://localhost:3001/rekordy" : "http://10.0.2.2:3001/rekordy"
 
+    const putData = () => {
+      axios.put(host+'/'+ubez.id, {
+        nazwa: "Hello World!",
+        imie: "This is an updated post."
+      })
+      .then((response) => {
+          console.log(response.data)
+          console.log("dziala")
+      })
+  }
     //const value = route?.params?.item
   return (
     
@@ -74,7 +86,12 @@ const Details = ({ route, navigation }) => {
      </Text> 
 
 
-     
+     <Button
+        title="Go Back"
+        color="white"
+        backgroundColor={colors.pink}
+        onPress={putData()}
+      />
    
        
       <Button

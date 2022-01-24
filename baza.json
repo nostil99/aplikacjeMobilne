@@ -1,12 +1,8 @@
 {
   "rekordy": [
     {
-      "nazwa": "Sad",
-      "imie": "Dasdsa§d",
-      "nazwisko": "Dadfdas",
-      "nrpolisy": "Das",
-      "dataRozpoczecia": "21",
-      "dataZakonczenia": "3243",
+      "nazwa": "Hello World!",
+      "imie": "This is an updated post.",
       "id": 1
     }
   ]
