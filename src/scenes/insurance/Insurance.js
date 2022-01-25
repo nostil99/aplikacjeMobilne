@@ -58,7 +58,7 @@ const Insurance = ({navigation}) => {
 
                 }}
             />
-            <ScrollView>
+            <ScrollView>    
             <List.Section title="lista polis">
                 {list.map((item, index) =>
                     <List.Item onPress={() => {

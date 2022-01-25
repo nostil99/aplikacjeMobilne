@@ -1,9 +1,22 @@
 {
   "rekordy": [
     {
-      "nazwa": "Hello World!",
-      "imie": "This is an updated post.",
+      "nazwa": "Kuba123",
+      "imie": "Addafa",
+      "nazwisko": "Sdds",
+      "nrpolisy": "Sfsfsffsfssfgsfg",
+      "dataRozpoczecia": "2e33e341",
+      "dataZakonczenia": "3242342342",
       "id": 1
+    },
+    {
+      "nazwa": "Dc",
+      "imie": "Fs",
+      "nazwisko": "Fsf",
+      "nrpolisy": "Sff",
+      "dataRozpoczecia": "Fsf",
+      "dataZakonczenia": "Fsff",
+      "id": 2
     }
   ]
 }

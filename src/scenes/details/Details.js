@@ -57,7 +57,11 @@ const Details = ({ route, navigation }) => {
       {/* <Text style={styles.title}>{`Details (from ${from})`}</Text> */}
        <Text style={styles.title
       }>
+        
       {ubez.nazwa}
+     </Text>
+     <Text>
+      {"id: "+ ubez.id}
      </Text>
      <Text>
       {"Imię: "+ ubez.imie}

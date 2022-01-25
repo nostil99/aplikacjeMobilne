@@ -6,6 +6,7 @@ import {
 import { colors } from 'theme'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Button, Input as TextInput, Stack } from 'native-base'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
 const styles = StyleSheet.create({
@@ -60,72 +61,19 @@ const Formularz2 = ({ route, navigation }) => {
   },[])
 
   const zmodyfikujPolise = () => {
-    if(nazwa != "") {
+ 
+    if(nazwa != "" && imie != "" && nazwisko != "" && nrPolisy != "" && data1 != "" && data2 != "") {
       axios.put(host + "/" + ubez.id, {
-        nazwa: nazwa
+      nazwa: nazwa,
+      imie: imie,
+      nazwisko: nazwisko,
+      nrpolisy: nrPolisy,
+      dataRozpoczecia: data1,
+      dataZakonczenia: data2
       })
       .then(function (response) {
         console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }
-
-    if(imie != "") {
-      axios.put(host + "/" + ubez.id, {
-        imie: imie
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }
-
-    if(nazwisko != "") {
-      axios.put(host + "/" + ubez.id, {
-        nazwisko: nazwisko
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }
-
-    if(nrPolisy != "") {
-      axios.put(host + "/" + ubez.id, {
-        nrpolisy: nrPolisy
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }
-    
-    if(data1 != "") {
-      axios.put(host + "/" + ubez.id, {
-        data1: data1
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }
-
-    if(data2 != "") {
-      axios.put(host + "/" + ubez.id, {
-        data2: data2
-      })
-      .then(function (response) {
-        console.log(response);
+        console.log("formularz2")
       })
       .catch(function (error) {
         console.log(error);
@@ -235,14 +183,6 @@ const Formularz2 = ({ route, navigation }) => {
       }}
     />
 
-    <Button 
-      style = {styles.input}
-      size = "md"
-      backgroundColor = {colors.darkPurple} 
-      onPress = {() => {
-        navigation.navigate('Camera')
-      }}>
-    ZRÓB ZDJĘCIE</Button>
 
     <Button 
       style = {styles.input}
