@@ -6,7 +6,7 @@ import {
 import Button from 'components/Button'
 import { colors } from 'theme'
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import axios from 'axios';
+
 const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -19,20 +19,21 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
   },
+  input: {
+    marginTop: 20,
+  },
 
 })
 
 
-
-
-   
 const Details = ({ route, navigation }) => {
   const from = route?.params?.from
-  const axios = require('axios');
+
   const [ubez,setUbez] = useState([])
   useEffect(()=>{
       getData()
   },[])
+
   const getData = async () => {  
     try {    
       const value = await AsyncStorage.getItem('storage_Key')  
@@ -47,23 +48,10 @@ const Details = ({ route, navigation }) => {
      }
    
     }
-    const host = Platform.OS === 'ios' ? "http://localhost:3001/rekordy" : "http://10.0.2.2:3001/rekordy"
 
-    const putData = () => {
-      axios.put(host+'/'+ubez.id, {
-        nazwa: "Hello World!",
-        imie: "This is an updated post."
-      })
-      .then((response) => {
-          console.log(response.data)
-          console.log("dziala")
-      })
-  }
     //const value = route?.params?.item
   return (
     
-
-
     <View style={styles.root}>
       <StatusBar barStyle="light-content" />
       {/* <Text style={styles.title}>{`Details (from ${from})`}</Text> */}
@@ -72,31 +60,34 @@ const Details = ({ route, navigation }) => {
       {ubez.nazwa}
      </Text>
      <Text>
-      {"imie: "+ ubez.imie}
+      {"Imię: "+ ubez.imie}
      </Text>
      <Text>
-      {"nazwisko:"+  ubez.nazwisko}
-     </Text>
-   
-     <Text>
-      {"data startu polisy:"+  ubez.dataRozpoczecia}
+      {"Nazwisko: "+  ubez.nazwisko}
      </Text>
      <Text>
-      {"data zakonczenia polisy:"+  ubez.dataZakonczenia}
+      {"Numer polisy: "+  ubez.nrpolisy}
+     </Text>
+     <Text>
+      {"Data startu polisy: "+  ubez.dataRozpoczecia}
+     </Text>
+     <Text>
+      {"Data zakonczenia polisy: "+  ubez.dataZakonczenia}
      </Text> 
 
-
      <Button
-        title="Go Back"
+        title="Zmodyfikuj"
         color="white"
+        style={styles.input}
         backgroundColor={colors.pink}
-        onPress={putData()}
+        onPress = {() => {
+          navigation.navigate('Formularz2')
+        }}
       />
-   
-       
       <Button
-        title="Go Back"
+        title="Powrót"
         color="white"
+        style={styles.input}
         backgroundColor={colors.pink}
         onPress={navigation.goBack}
       />
@@ -115,7 +106,7 @@ Details.propTypes = {
 
 Details.defaultProps = {
   route: { params: { from: '' } },
-  navigation: { goBack: () => null },
+  navigation: { goBack: () => null},
 }
 
 export default Details

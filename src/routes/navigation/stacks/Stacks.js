@@ -13,6 +13,7 @@ import Author from '../../../scenes/author'
 import Insurance from '../../../scenes/insurance'
 import Camera from '../../../scenes/camera'
 import ZmianaNazwy from '../../../scenes/zmianaNazwy'
+import Formularz2 from '../../../scenes/formularz2'
 
 
 // ------------------------------------
@@ -100,6 +101,17 @@ export const HomeNavigator = () => (
     <Stack.Screen
       name="Camera"
       component={Camera}
+      disabled={true}
+      // options={({ navigation }) => ({
+      //   title: 'Details',
+      //   headerLeft: () => <HeaderLeft navigation={navigation} />,
+      //   headerTitle: () => <HeaderTitle />,
+      // })}
+    />
+
+    <Stack.Screen
+      name="Formularz2"
+      component={Formularz2}
       disabled={true}
       // options={({ navigation }) => ({
       //   title: 'Details',
