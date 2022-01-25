@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
       margin: 20,
     },
     button: {
-      flex: 0.2,
+      flex: 1,
       alignSelf: 'flex-end',
       alignItems: 'center',
     },
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     },
     stretch: {
       width: 400,
-      height: 400,
+      height: 600,
       resizeMode: 'stretch',
     },
   });
@@ -58,6 +58,7 @@ const Camera = ({ route, navigation }) => {
       try {
         let zdj = await aparatRef.current.takePictureAsync({
           allowsEditing: true,
+          base64: true,
           aspect: [4, 3],
           quality: 1,
         });
