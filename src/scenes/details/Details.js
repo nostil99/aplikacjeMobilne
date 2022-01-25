@@ -6,7 +6,8 @@ import {
 import Button from 'components/Button'
 import { colors } from 'theme'
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import axios from 'axios'
+const host = Platform.OS === 'ios' ? "http://localhost:3001/rekordy" : "http://10.0.2.2:3001/rekordy"
 const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -49,7 +50,19 @@ const Details = ({ route, navigation }) => {
    
     }
 
-    //const value = route?.params?.item
+    const deleteInsure = () =>{
+        axios.delete(host+'/'+ubez.id).then(resp =>{
+            console.log(resp.data);
+            navigation.goBack()
+            navigation.goBack()
+        }).catch(
+          error =>{
+            console.log(error)
+          }
+        )
+
+        
+    }
   return (
     
     <View style={styles.root}>
@@ -95,7 +108,16 @@ const Details = ({ route, navigation }) => {
         backgroundColor={colors.pink}
         onPress={navigation.goBack}
       />
+      <Button
+        title="usun"
+        color="white"
+        style={styles.input}
+        backgroundColor={colors.pink}
+        onPress={deleteInsure}
+      />
+    
     </View>
+    
   )
 }
 
