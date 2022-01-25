@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  StyleSheet, Text, View, StatusBar,
+  StyleSheet, Text, View, StatusBar, ImageBackground
 } from 'react-native'
 import Button from 'components/Button'
 import { colors } from 'theme'
@@ -12,22 +12,27 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.lightGrayPurple,
   },
   title: {
     fontSize: 34,
     marginBottom: 20,
     fontWeight: 'bold',
+    textAlign: 'center',
+    padding: 10,
+    marginTop: 10,
+    color: "white"
   },
   przycisk:{
-    margin:10
+    marginTop:80,
+    margin:10,
   }
 })
 
 const Home = ({ navigation }) => (
-  <View style={styles.root}>
+  <ImageBackground source={require('./tlo.jpg')} style={{height:'110%'}}>
+   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>WITAJ!</Text>
+    <View style={{width:"75%", height: 130, backgroundColor:'rgb(147,136,219)'}}><Text style={styles.title}>WITAJ W NASZEJ APLIKACJI</Text></View>
     <Button
       style={styles.przycisk}
       title="Dodaj polisę OC/ACC do systemu"
@@ -46,6 +51,7 @@ const Home = ({ navigation }) => (
       }}
     />
   </View>
+  </ImageBackground>
 )
 
 Home.propTypes = {

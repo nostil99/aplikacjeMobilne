@@ -1,27 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  StyleSheet, Text, View, StatusBar, Linking
+  StyleSheet, Text, View, StatusBar, Linking,ImageBackground
 } from 'react-native'
 import Button from 'components/Button'
 import { colors } from 'theme'
 import { TouchableOpacity } from "react-native-gesture-handler"
+import { AutoFocus } from 'expo-camera/build/Camera.types'
 
 
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.lightGrayPurple,
   },
   title: {
     fontSize: 35,
     marginBottom: 5,
-    marginTop: 5,
+    marginTop: 170,
     fontWeight: 'bold',
     lineHeight: 100,
+    textAlign: 'center',
   },
   tresc:{
     fontSize:23,
@@ -29,28 +29,34 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'center',
     paddingVertical: 5,
-    fontWeight: 'bold'
+
+    color:'white',
 },
 pomocb:{
-  borderWidth: 4,
-  borderColor: '#000000',
-  backgroundColor: '#86beec',
-  margin: 5,
-  width: 350,
+  backgroundColor: 'rgb(35,29,84)',
+  marginLeft: 55,
+  marginBottom: 20,
+  width: 300,
+  height: 60,
   textAlign: 'center',
+  paddingTop: 5,
+
 },
 })
 const URL = (zm)=>{
   Linking.openURL(zm)
 }
 const Help = ({ navigation }) => (
-  <View style={styles.root}>
+  
+     <View style={styles.root}>
+       <ImageBackground source={require('./tlo2.png')} style={{height:'120%'}}>
     <Text style={styles.title}>POMOC</Text>
     <TouchableOpacity style={styles.pomocb} onPress={()=>URL("https://reactnative.dev/")}><Text style={styles.tresc}>Centrum Obsługi</Text></TouchableOpacity>
     <TouchableOpacity style={styles.pomocb} onPress={()=>URL("https://twitter.com/reactnative")}><Text style={styles.tresc}>Mam pytanie</Text></TouchableOpacity>
     <TouchableOpacity style={styles.pomocb} onPress={()=>URL("https://opensource.fb.com/legal/terms/")}><Text style={styles.tresc}>Regulamin</Text></TouchableOpacity>
     <TouchableOpacity style={styles.pomocb} onPress={()=>URL("https://opensource.fb.com/legal/privacy/")}><Text style={styles.tresc}>Polityka Prywatnosci</Text></TouchableOpacity>
-  </View>
+    </ImageBackground></View>
+  
 )
 
 Help.propTypes = {
