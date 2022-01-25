@@ -49,7 +49,7 @@ const URL = (zm)=>{
 const Help = ({ navigation }) => (
   
      <View style={styles.root}>
-       <ImageBackground source={require('./tlo2.png')} style={{height:'120%'}}>
+       <ImageBackground source={require('./help.png')} style={{height:'100%'}}>
     <Text style={styles.title}>POMOC</Text>
     <TouchableOpacity style={styles.pomocb} onPress={()=>URL("https://reactnative.dev/")}><Text style={styles.tresc}>Centrum Obsługi</Text></TouchableOpacity>
     <TouchableOpacity style={styles.pomocb} onPress={()=>URL("https://twitter.com/reactnative")}><Text style={styles.tresc}>Mam pytanie</Text></TouchableOpacity>

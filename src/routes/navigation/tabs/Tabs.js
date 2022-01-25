@@ -59,8 +59,8 @@ export const HelpTabNavigator = () => (
   swipeEnabled={false}
 >
   <Tab.Screen name="Help" component={HelpNavigator} />
-  <Tab.Screen name="Profile" component={ProfileNavigator} />
   <Tab.Screen name="Author" component={AuthorNavigator} />
+  <Tab.Screen name="Profile" component={ProfileNavigator} />
 </Tab.Navigator>
 )
 

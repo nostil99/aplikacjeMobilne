@@ -5,9 +5,10 @@ import {
 } from 'react-native'
 import { colors } from 'theme'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Button, Input as TextInput, Stack } from 'native-base'
+import { Button, Center, Input as TextInput, Stack } from 'native-base'
 import axios from 'axios';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import dateFormat, { masks } from "dateformat";
 
 
 const styles = StyleSheet.create({
@@ -29,33 +30,41 @@ const styles = StyleSheet.create({
   },
   input: {
     marginTop: 12.5,
+  },
+  dateField: {
+    width:200,
+    
   }
 })
 
 const Formularz = ({ route, navigation }) => {
 
-  const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(true);
 
-  const onChange = (event, selectedDate) => {
-    const currentDate = selectedDate || date;
+  const onChangeStart = (event, selectedDate) => {
+    const currentDate = selectedDate || data1;
     setShow(Platform.OS === 'ios');
-    setDate(currentDate);
+    setData1(currentDate);
+  };
+  const onChangeEnd = (event, selectedDate) => {
+    const currentDate = selectedDate || data2;
+    setShow(Platform.OS === 'ios');
+    setData2(currentDate);
   };
 
-  const showMode = (currentMode) => {
+  const showMode = () => {
     setShow(true);
     setMode('date');
   };
 
-  const showDatepicker = () => {
+  const showDatepickerStart = () => {
+    showMode('date');
+  };
+  const showDatepickerEnd = () => {
     showMode('date');
   };
 
-  const showTimepicker = () => {
-    showMode('time');
-  };
 
 
 
@@ -63,8 +72,8 @@ const Formularz = ({ route, navigation }) => {
   const [imie, setImie]= useState("");
   const [nazwisko, setNazwisko] = useState("");
   const [nrPolisy, setNrPolisy] = useState("");
-  const [data1, setData1] = useState("");
-  const [data2, setData2] = useState("");
+  const [data1, setData1] = useState(new Date());
+  const [data2, setData2] = useState(new Date());
   const host = Platform.OS === 'ios' ? "http://localhost:3001/rekordy" : "http://10.0.2.2:3001/rekordy"
 
 
@@ -74,8 +83,8 @@ const Formularz = ({ route, navigation }) => {
       imie: imie,
       nazwisko: nazwisko,
       nrpolisy: nrPolisy,
-      dataRozpoczecia: data1,
-      dataZakonczenia: data2
+      dataRozpoczecia: dateFormat(data1,"dd.mm.yyyy").toString(),
+      dataZakonczenia: dateFormat(data2,"dd.mm.yyyy").toString()
     })
     .then(function (response) {
       console.log(response);
@@ -84,14 +93,16 @@ const Formularz = ({ route, navigation }) => {
       console.log(error);
     });
 
-    alert('Dodano polisę o następujących danych:\n' + "Nazwa: " + nazwa + "\nImię: " + imie + "\nNazwisko: " + nazwisko + "\nNumer polisy: " + nrPolisy + "\nData rozpoczęcia: " + data1 + "\nData zakończenia: " + data2);
+    alert('Dodano polisę o następujących danych:\n' + "Nazwa: " + nazwa + "\nImię: " + imie + "\nNazwisko: " 
+    + nazwisko + "\nNumer polisy: " + nrPolisy + "\nData rozpoczęcia: " 
+    + data1.toString() + "\nData zakończenia: " + data2.toString());
 
     setNazwa("");
     setImie("");
     setNazwisko("");
     setNrPolisy("");
-    setData1("");
-    setData2("");
+    setData1(new Date());
+    setData2(new Date());
   };
 
   const from = route?.params?.from
@@ -157,49 +168,45 @@ const Formularz = ({ route, navigation }) => {
       }}
     />
 
-    <TextInput
-      style = {styles.input}
-      size = "lg"
-      mx = "3"
-      value = {data1} 
-      placeholder = "Data rozpoczęcia"
-      w = {{
-        base: "75%",
-        md: "25%",
-      }}
-      onChangeText={(newText) => {
-          setData1(newText)
-      }}
-    />
 
-    <TextInput
-      style = {styles.input}
-      size = "lg"
-      mx = "3"
-      value = {data2} 
-      placeholder = "Data zakończenia"
-      w = {{
-        base: "75%",
-        md: "25%",
-      }}
-      onChangeText={(newText) => {
-          setData2(newText)
-      }}
-    />
+
     <View>
 
       {show && (
         <DateTimePicker
-          testID="dateTimePicker"
-          value={date}
-          mode={mode}
+      style={styles.dateField}
+        dateFormat="dd.mm.yyyy"
+          testID="dateTimePickear"
+          value={data1}
+          mode='date'
           is24Hour={true}
           display="default"
-          onChange={onChange}
+          onChange={onChangeStart}
         />
       )}
-<Button onPress={showDatepicker}>dodaj date</Button>
+<Button onPress={showDatepickerStart}>dodaj date</Button>
       </View>
+<Text>
+  {dateFormat(data1,"dd.mm.yyyy").toString()}
+</Text>
+<View>
+{show && (
+        <DateTimePicker
+      style={styles.dateField}
+        dateFormat="dd.mm.yyyy"
+          testID="dateTimePickear2"
+          value={data2}
+          mode='date'
+          is24Hour={true}
+          display="default"
+          onChange={onChangeEnd}
+        />
+      )}
+<Button onPress={showDatepickerEnd}>dodaj date</Button>
+      </View>
+<Text>
+  {dateFormat(data2,"dd.mm.yyyy").toString()}
+</Text>
 
     <Button 
       style = {styles.input}
@@ -230,8 +237,8 @@ const Formularz = ({ route, navigation }) => {
         setImie("");
         setNazwisko("");
         setNrPolisy("");
-        setData1("");
-        setData2("");
+        setData1(new Date());
+        setData2(new Date());
       }}>
     WYCZYŚĆ FORMULARZ</Button>
 

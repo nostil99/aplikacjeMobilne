@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    margin:20,
+    marginTop:'35%',
   },
   title: {
     fontSize: 34,
@@ -29,10 +30,9 @@ const styles = StyleSheet.create({
 })
 
 const Home = ({ navigation }) => (
-  <ImageBackground source={require('./tlo.jpg')} style={{height:'110%'}}>
+  <ImageBackground source={require('./tlo.png')} style={{height:'100%'}}>
    <View style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <View style={{width:"75%", height: 130, backgroundColor:'rgb(147,136,219)'}}><Text style={styles.title}>WITAJ W NASZEJ APLIKACJI</Text></View>
     <Button
       style={styles.przycisk}
       title="Dodaj polisę OC/ACC do systemu"

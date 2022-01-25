@@ -54,7 +54,7 @@ const Profile = ({ navigation }) => {
   if (flaga===false){
   return(
   <View style={styles.root}>
-    <ImageBackground source={require('./tlo2.png')} style={{height:'120%'}}>
+    <ImageBackground source={require('./profile.png')} style={{height:'100%'}}>
     <StatusBar barStyle="light-content" />
     <Image
     style={styles.zdjecie}

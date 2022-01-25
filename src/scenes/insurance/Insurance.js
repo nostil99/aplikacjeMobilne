@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { List, TextInput,Text } from 'react-native-paper';
+import { List, TextInput,Text ,Searchbar} from 'react-native-paper';
 import { Platform, ScrollView, SliderComponent, View } from "react-native";
 import PropTypes from 'prop-types'
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -25,8 +25,10 @@ const Insurance = ({navigation}) => {
     useEffect(()=>{
         getData()
     },[])
+
     const [list, setList] = useState([]);
-    const [filter, setFilter] = useState("");
+    const [filter, setFilter] = useState('');
+    const [data, setData] = useState(null);
     const storeData = async (value) => {  
         try {     
         const jsonValue = JSON.stringify(value)
@@ -38,29 +40,31 @@ const Insurance = ({navigation}) => {
             // saving error  
         }
     }
-
-    useEffect(() => {
-        setList(list.filter((dane) => {
-            return dane.nazwa.replace(/\s/g, '').toLowerCase().indexOf(filter.replace(/\s/g, '').toLowerCase()) !== -1 
-        }))
-    }, [filter])
+    const onChangeSearch = query => setFilter(query);
     
+    const clearString = (value) => {
+        return value.replace(/\s/g, '').toLowerCase();
+    }
+    const checkName = (value) => {
+        return clearString(value.nazwa).indexOf(clearString(filter)) >= 0
+    }
 
+    const filterData = () => {
+
+        return [...new Set(list.filter(checkName))];
+    }
 
     
     return(
         <>
-            <TextInput
-                label="szukaj"
+            <Searchbar
+                placeholder="Wyszukaj"
+                onChangeText={onChangeSearch}
                 value={filter}
-                onChangeText={(newText) => {
-                    setFilter(newText)
-
-                }}
             />
             <ScrollView>    
             <List.Section title="lista polis">
-                {list.map((item, index) =>
+                {filterData().map((item, index) =>
                     <List.Item onPress={() => {
                         //console.log(list[index])
                         storeData(item) 

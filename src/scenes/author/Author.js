@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
 
 const Author = ({ navigation }) => (
   <View style={styles.root}>
-    <ImageBackground source={require('./tlo2.png')} style={{height:'120%'}}>
+    <ImageBackground source={require('./autor.png')} style={{height:'100%'}}>
       <StatusBar barStyle="light-content" />
     <Text style={styles.title}>AUTORZY</Text>
     <Text style={styles.tresc}>Jakub Stawiarz</Text>
