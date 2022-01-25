@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import {
-  StyleSheet, Text, View, StatusBar,
+  StyleSheet,Button as NButton, Text, View, StatusBar,
 } from 'react-native'
 import { colors } from 'theme'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Button, Input as TextInput, Stack } from 'native-base'
 import axios from 'axios';
+import DateTimePicker from '@react-native-community/datetimepicker';
+
 
 const styles = StyleSheet.create({
   root: {
@@ -31,6 +33,32 @@ const styles = StyleSheet.create({
 })
 
 const Formularz = ({ route, navigation }) => {
+
+  const [date, setDate] = useState(new Date(1598051730000));
+  const [mode, setMode] = useState('date');
+  const [show, setShow] = useState(true);
+
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setShow(Platform.OS === 'ios');
+    setDate(currentDate);
+  };
+
+  const showMode = (currentMode) => {
+    setShow(true);
+    setMode('date');
+  };
+
+  const showDatepicker = () => {
+    showMode('date');
+  };
+
+  const showTimepicker = () => {
+    showMode('time');
+  };
+
+
+
   const [nazwa, setNazwa]= useState("");
   const [imie, setImie]= useState("");
   const [nazwisko, setNazwisko] = useState("");
@@ -38,6 +66,8 @@ const Formularz = ({ route, navigation }) => {
   const [data1, setData1] = useState("");
   const [data2, setData2] = useState("");
   const host = Platform.OS === 'ios' ? "http://localhost:3001/rekordy" : "http://10.0.2.2:3001/rekordy"
+
+
   const dodajPolise = () => {
     axios.post(host, {
       nazwa: nazwa,
@@ -156,6 +186,20 @@ const Formularz = ({ route, navigation }) => {
           setData2(newText)
       }}
     />
+    <View>
+
+      {show && (
+        <DateTimePicker
+          testID="dateTimePicker"
+          value={date}
+          mode={mode}
+          is24Hour={true}
+          display="default"
+          onChange={onChange}
+        />
+      )}
+<Button onPress={showDatepicker}>dodaj date</Button>
+      </View>
 
     <Button 
       style = {styles.input}
