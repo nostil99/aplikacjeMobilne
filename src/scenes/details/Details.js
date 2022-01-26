@@ -7,6 +7,7 @@ import Button from 'components/Button'
 import { colors } from 'theme'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios'
+import dateFormat, { masks } from "dateformat";
 const host = Platform.OS === 'ios' ? "http://localhost:3001/rekordy" : "http://10.0.2.2:3001/rekordy"
 const styles = StyleSheet.create({
   root: {
@@ -86,10 +87,10 @@ const Details = ({ route, navigation }) => {
       {"Numer polisy: "+  ubez.nrpolisy}
      </Text>
      <Text>
-      {"Data startu polisy: "+  ubez.dataRozpoczecia}
+      {"Data startu polisy: "+  dateFormat(Date.parse(ubez.dataRozpoczecia),"dd.mm.yyyy")}
      </Text>
      <Text>
-      {"Data zakonczenia polisy: "+  ubez.dataZakonczenia}
+      {"Data zakonczenia polisy: "+  dateFormat(Date.parse(ubez.dataZakonczenia),"dd.mm.yyyy")}
      </Text> 
 
      <Button

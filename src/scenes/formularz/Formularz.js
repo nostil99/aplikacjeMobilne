@@ -214,7 +214,7 @@ const Formularz = ({ route, navigation }) => {
       size = "md"
       backgroundColor = {colors.darkPurple} 
       onPress = {() => {
-        if(nazwa != "" && imie != "" && nazwisko != "" && nrPolisy != "" && data1 != "" && data2 != "") {
+        if(nazwa != "" && imie != "" && nazwisko != "" && nrPolisy != "" && data1 < data2 ) {
           dodajPolise();
         }
       }}>

@@ -4,7 +4,7 @@ import { Platform, ScrollView, SliderComponent, StyleSheet, View } from "react-n
 import PropTypes from 'prop-types'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from "axios";
-import dateFormat, { masks } from "dateformat";
+
 
 
 
@@ -69,7 +69,10 @@ const Insurance = ({navigation}) => {
                 {filterData().map((item, index) =>
                     
                     
-                    <List.Item style={x>=Date.parse(item.dataZakonczenia)  && {backgroundColor:'red', margin:5}}
+                    <List.Item style={x>=Date.parse(item.dataZakonczenia) ? 
+                        {backgroundColor:'red', margin:5} 
+                        : 
+                        {backgroundColor:'green', margin:5}}
                     
                     onPress={() => {
                         //console.log(list[index])

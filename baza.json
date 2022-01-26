@@ -26,6 +26,15 @@
       "dataRozpoczecia": "Wed Jan 26 2022 01:35:08 GMT+0100 (CET)",
       "dataZakonczenia": "Mon Jan 17 2022 01:35:00 GMT+0100 (CET)",
       "id": 3
+    },
+    {
+      "nazwa": "Adfa",
+      "imie": "Dfsdf",
+      "nazwisko": "Fsd",
+      "nrpolisy": "Sfdfs",
+      "dataRozpoczecia": "Wed Jan 26 2022 01:53:10 GMT+0100 (CET)",
+      "dataZakonczenia": "Fri Jan 28 2022 01:53:00 GMT+0100 (CET)",
+      "id": 4
     }
   ]
 }
