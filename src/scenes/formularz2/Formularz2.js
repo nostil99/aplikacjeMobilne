@@ -104,7 +104,7 @@ const Formularz2 = ({ route, navigation }) => {
       .then(function (response) {
         console.log(response);
         console.log("formularz2")
-        navigation.navigate('Home')
+        navigation.navigate('Insurance')
 
     alert("Zmodyfikowano polisę.");
       })
