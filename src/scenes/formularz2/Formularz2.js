@@ -8,7 +8,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { Button, Input as TextInput, Stack } from 'native-base'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
-
+import DateTimePicker from '@react-native-community/datetimepicker';
 const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -24,10 +24,15 @@ const styles = StyleSheet.create({
   },
   text2: {
     fontSize: 15,
-    marginTop: 50,
+    marginTop: 10,
+    textAlign: "center"
   },
   input: {
     marginTop: 12.5,
+  },
+  dateField: {
+    width:200,
+    marginEnd:"20%"
   }
 })
 
@@ -36,10 +41,26 @@ const Formularz2 = ({ route, navigation }) => {
   const [imie, setImie]= useState("");
   const [nazwisko, setNazwisko] = useState("");
   const [nrPolisy, setNrPolisy] = useState("");
-  const [data1, setData1] = useState("");
-  const [data2, setData2] = useState("");
+  const [data1, setData1] = useState(new Date());
+  const [data2, setData2] = useState(new Date());
   const [ubez, setUbez] = useState([]);
   const host = Platform.OS === 'ios' ? "http://localhost:3001/rekordy" : "http://10.0.2.2:3001/rekordy"
+
+
+  const [mode, setMode] = useState('date');
+  const [show, setShow] = useState(true);
+
+  const onChangeStart = (event, selectedDate) => {
+    const currentDate = selectedDate || data1;
+    setShow(Platform.OS === 'ios');
+    setData1(currentDate);
+  };
+  const onChangeEnd = (event, selectedDate) => {
+    const currentDate = selectedDate || data2;
+    setShow(Platform.OS === 'ios');
+    setData2(currentDate);
+  };
+
 
   const getData = async () => {  
     try {    
@@ -62,32 +83,35 @@ const Formularz2 = ({ route, navigation }) => {
 
   const zmodyfikujPolise = () => {
  
-    if(nazwa != "" && imie != "" && nazwisko != "" && nrPolisy != "" && data1 != "" && data2 != "") {
+    if(nazwa != "" && imie != "" && nazwisko != "" && nrPolisy != "" && data1 < data2 ) {
       axios.put(host + "/" + ubez.id, {
       nazwa: nazwa,
       imie: imie,
       nazwisko: nazwisko,
       nrpolisy: nrPolisy,
-      dataRozpoczecia: data1,
-      dataZakonczenia: data2
+      dataRozpoczecia: data1.toString(),
+      dataZakonczenia: data2.toString()
+      
       })
       .then(function (response) {
         console.log(response);
         console.log("formularz2")
+        navigation.navigate('Home')
+
+    alert("Zmodyfikowano polisę.");
       })
       .catch(function (error) {
         console.log(error);
       });
     }
 
-    alert("Zmodyfikowano polisę.");
 
     setNazwa("");
     setImie("");
     setNazwisko("");
     setNrPolisy("");
-    setData1("");
-    setData2("");
+    setData1(new Date());
+    setData2(new Date());
   };
 
   const from = route?.params?.from
@@ -153,36 +177,47 @@ const Formularz2 = ({ route, navigation }) => {
       }}
     />
 
-    <TextInput
-      style = {styles.input}
-      size = "lg"
-      mx = "3"
-      value = {data1} 
-      placeholder = "Data rozpoczęcia"
-      w = {{
-        base: "75%",
-        md: "25%",
-      }}
-      onChangeText={(newText) => {
-          setData1(newText)
-      }}
-    />
 
-    <TextInput
-      style = {styles.input}
-      size = "lg"
-      mx = "3"
-      value = {data2} 
-      placeholder = "Data zakończenia"
-      w = {{
-        base: "75%",
-        md: "25%",
-      }}
-      onChangeText={(newText) => {
-          setData2(newText)
-      }}
-    />
 
+
+<View>
+    <Text style={styles.text2}>Data rozpaczecia</Text>
+      {show && (
+        <DateTimePicker
+      style={styles.dateField}
+        dateFormat="dd.mm.yyyy"
+          testID="dateTimePickear"
+          value={data1}
+          mode='date'
+          is24Hour={true}
+          display="default"
+          onChange={onChangeStart}
+        />
+      )}
+
+      </View>
+<Text>
+  {/* {dateFormat(data1,"dd.mm.yyyy").toString()} */}
+</Text>
+<View>
+<Text style={styles.text2}>Data zakonczenia</Text>
+{show && (
+        <DateTimePicker
+      style={styles.dateField}
+        dateFormat="dd.mm.yyyy"
+          testID="dateTimePickear2"
+          value={data2}
+          mode='date'
+          is24Hour={true}
+          display="default"
+          onChange={onChangeEnd}
+        />
+      )}
+
+      </View>
+<Text>
+  {/* {dateFormat(data2,"dd.mm.yyyy").toString()} */}
+</Text>
 
     <Button 
       style = {styles.input}
@@ -190,7 +225,7 @@ const Formularz2 = ({ route, navigation }) => {
       backgroundColor = {colors.darkPurple} 
       onPress = {() => {
         zmodyfikujPolise();
-        navigation.navigate('Home')
+        
       }}>
     ZMODYFIKUJ POLISĘ</Button>
 
