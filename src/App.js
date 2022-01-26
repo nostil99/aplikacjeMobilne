@@ -9,7 +9,7 @@ import { imageAssets } from 'theme/images'
 import { fontAssets } from 'theme/fonts'
 import Router from './routes'
 
-export const ngrokHost = "http://acbd-81-26-6-38.ngrok.io/rekordy"
+export const ngrokHost = "http://3117-81-26-6-38.ngrok.io/rekordy"
 
 const App = () => {
   // state

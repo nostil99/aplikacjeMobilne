@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     margin:20,
-    marginTop:'35%',
+    marginTop:'20%',
   },
   title: {
     fontSize: 34,
@@ -24,8 +24,11 @@ const styles = StyleSheet.create({
     color: "white"
   },
   przycisk:{
-    marginTop:80,
+    marginTop:10,
     margin:10,
+    height:40,
+    width:'100%',
+    alignItems:'center'
   }
 })
 
@@ -43,6 +46,7 @@ const Home = ({ navigation }) => (
       }}
     />
       <Button
+      style={styles.przycisk}
       title="Wyswietl polisy"
       color="white"
       backgroundColor={colors.darkPurple}

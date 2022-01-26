@@ -5,6 +5,8 @@ import PropTypes from 'prop-types'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from "axios";
 import { ngrokHost } from "../../App";
+import { background, backgroundColor, borderRadius, margin } from "styled-system";
+
 
 
 
@@ -65,15 +67,30 @@ const Insurance = ({navigation}) => {
                 onChangeText={onChangeSearch}
                 value={filter}
             />
+       
             <ScrollView>    
             <List.Section title="lista polis">
                 {filterData().map((item, index) =>
                     
                     
-                    <List.Item style={x>=Date.parse(item.dataZakonczenia) ? 
-                        {backgroundColor:'red', margin:5} 
+                    <List.Item 
+                    
+                    style={{
+                        borderWidth: 1,
+                        width:"80%",
+                        marginHorizontal:"10%",
+                        marginBottom:15,
+                        borderRadius:30,
+                        backgroundColor:"#00aafa21"
+                        
+                    }}
+                    titleStyle={x>=Date.parse(item.dataZakonczenia) ? 
+                        {color:"red"} 
                         : 
-                        {backgroundColor:'green', margin:5}}
+                        { color:"green"}
+                        
+                        
+                    }
                     
                     onPress={() => {
                         //console.log(list[index])

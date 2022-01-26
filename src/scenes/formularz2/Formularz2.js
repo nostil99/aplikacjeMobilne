@@ -86,7 +86,7 @@ const Formularz2 = ({ route, navigation }) => {
 
   const zmodyfikujPolise = () => {
  
-    if(nazwa != "" && imie != "" && nazwisko != "" && nrPolisy != "" && data1 < data2 ) {
+    if(nazwa != "" && nrPolisy != "" && data1 < data2 ) {
       axios.put(host + "/" + ubez.id, {
       
       nazwa: nazwa,

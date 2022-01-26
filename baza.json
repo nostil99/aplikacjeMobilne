@@ -1,31 +1,22 @@
 {
   "rekordy": [
     {
-      "nazwa": "D",
-      "imie": "Dsds",
-      "nazwisko": "Dssfd",
-      "nrpolisy": "Fsdsfd",
-      "dataRozpoczecia": "2022.01.26",
-      "dataZakonczenia": "2022.01.26",
+      "nazwa": "Ad",
+      "imie": "",
+      "nazwisko": "",
+      "nrpolisy": "Acd",
+      "dataRozpoczecia": "Wed Jan 26 2022 17:24:36 GMT+0100 (CET)",
+      "dataZakonczenia": "Thu Jan 27 2022 17:24:00 GMT+0100 (CET)",
       "id": 1
     },
     {
-      "nazwa": "Sfd",
-      "imie": "Sdf",
-      "nazwisko": "Fsdsfd",
-      "nrpolisy": "Dsfd",
-      "dataRozpoczecia": "2022.01.11",
-      "dataZakonczenia": "2022.01.25",
+      "nazwa": "Aad",
+      "imie": "",
+      "nazwisko": "",
+      "nrpolisy": "",
+      "dataRozpoczecia": "Wed Jan 26 2022 17:18:04 GMT+0100 (CET)",
+      "dataZakonczenia": "Wed Jan 26 2022 17:18:04 GMT+0100 (CET)",
       "id": 2
-    },
-    {
-      "nazwa": "SazcCZXCZX",
-      "imie": "CZC",
-      "nazwisko": "CSC",
-      "nrpolisy": "DZCCZ",
-      "dataRozpoczecia": "Mon Jan 10 2022 10:15:00 GMT+0100 (CET)",
-      "dataZakonczenia": "Tue Jan 25 2022 10:15:00 GMT+0100 (CET)",
-      "id": 4
     },
     {
       "nazwa": "Fjcjx",
@@ -44,6 +35,15 @@
       "dataRozpoczecia": "Wed Jan 26 2022 12:12:26 GMT+0100 (CET)",
       "dataZakonczenia": "Sun Jan 30 2022 12:12:00 GMT+0100 (CET)",
       "id": 6
+    },
+    {
+      "nazwa": "Kckfj",
+      "imie": "Cbbxb",
+      "nazwisko": "Jhhh",
+      "nrpolisy": "Jsjdjdndjdj",
+      "dataRozpoczecia": "Wed Jan 26 2022 15:45:48 GMT+0100 (CET)",
+      "dataZakonczenia": "Sun Jan 30 2022 15:45:00 GMT+0100 (CET)",
+      "id": 7
     }
   ]
 }

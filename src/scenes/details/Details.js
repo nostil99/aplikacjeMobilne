@@ -23,13 +23,17 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   input: {
-    marginTop: 20,
+    margin: 8,
+    width:"80%",
+    height:45,
+    
   },
     text: {
-    fontSize: 15,
+    fontSize: 18,
     marginTop: 10,
     textAlign: 'left',
-    position: 'relative'
+    position: 'relative',
+    
   },
 
 })
@@ -38,6 +42,8 @@ const styles = StyleSheet.create({
 const Details = ({ route, navigation }) => {
   const from = route?.params?.from
   const host = Platform.OS === 'ios' ? ngrokHost: ngrokHost
+
+  const colorButton = colors.darkPurple
   const [ubez,setUbez] = useState([])
   useEffect(()=>{
       getData()
@@ -100,11 +106,14 @@ const Details = ({ route, navigation }) => {
       {"Data zakonczenia polisy: "+  dateFormat(Date.parse(ubez.dataZakonczenia),"dd.mm.yyyy")}
      </Text> 
      </View>
+     <View style={{margin:30}}>
+
+     </View>
      <Button
         title="Zmodyfikuj"
         color="white"
         style={styles.input}
-        backgroundColor={colors.pink}
+        backgroundColor={colorButton}
         onPress = {() => {
           navigation.navigate('Formularz2')
         }}
@@ -113,17 +122,17 @@ const Details = ({ route, navigation }) => {
         title="Powrót"
         color="white"
         style={styles.input}
-        backgroundColor={colors.pink}
+        backgroundColor={colorButton}
         onPress={navigation.goBack}
       />
       <Button
         title="usun"
         color="white"
         style={styles.input}
-        backgroundColor={colors.pink}
+        backgroundColor={colorButton}
         onPress={deleteInsure}
       />
-    
+
     </View>
     
   )
