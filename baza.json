@@ -1,30 +1,30 @@
 {
   "rekordy": [
     {
-      "nazwa": "Adsd",
-      "imie": "Fsdsd",
-      "nazwisko": "123",
-      "nrpolisy": "Addfa",
-      "dataRozpoczecia": "26.01.2022",
-      "dataZakonczenia": "26.01.2022",
+      "nazwa": "D",
+      "imie": "Dsds",
+      "nazwisko": "Dssfd",
+      "nrpolisy": "Fsdsfd",
+      "dataRozpoczecia": "2022.01.26",
+      "dataZakonczenia": "2022.01.26",
       "id": 1
     },
     {
-      "nazwa": "Sda",
-      "imie": "Sddf",
-      "nazwisko": "Sdf",
-      "nrpolisy": "Sfdff",
-      "dataRozpoczecia": "26.01.2022",
-      "dataZakonczenia": "26.01.2022",
+      "nazwa": "Sfd",
+      "imie": "Sdf",
+      "nazwisko": "Fsdsfd",
+      "nrpolisy": "Dsfd",
+      "dataRozpoczecia": "2022.01.11",
+      "dataZakonczenia": "2022.01.25",
       "id": 2
     },
     {
-      "nazwa": "Ads",
-      "imie": "Das",
-      "nazwisko": "Dada",
-      "nrpolisy": "Sfdf",
-      "dataRozpoczecia": "26.01.2022",
-      "dataZakonczenia": "26.01.2022",
+      "nazwa": "Das",
+      "imie": "Dsds",
+      "nazwisko": "Dsdf",
+      "nrpolisy": "Sdffsfd",
+      "dataRozpoczecia": "Wed Jan 26 2022 01:35:08 GMT+0100 (CET)",
+      "dataZakonczenia": "Mon Jan 17 2022 01:35:00 GMT+0100 (CET)",
       "id": 3
     }
   ]

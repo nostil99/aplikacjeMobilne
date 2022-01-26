@@ -26,14 +26,15 @@ const styles = StyleSheet.create({
   },
   text2: {
     fontSize: 15,
-    marginTop: 50,
+    marginTop: 10,
+    textAlign: "center"
   },
   input: {
     marginTop: 12.5,
   },
   dateField: {
     width:200,
-    
+    marginEnd:"20%"
   }
 })
 
@@ -53,17 +54,7 @@ const Formularz = ({ route, navigation }) => {
     setData2(currentDate);
   };
 
-  const showMode = () => {
-    setShow(true);
-    setMode('date');
-  };
 
-  const showDatepickerStart = () => {
-    showMode('date');
-  };
-  const showDatepickerEnd = () => {
-    showMode('date');
-  };
 
 
 
@@ -83,8 +74,8 @@ const Formularz = ({ route, navigation }) => {
       imie: imie,
       nazwisko: nazwisko,
       nrpolisy: nrPolisy,
-      dataRozpoczecia: dateFormat(data1,"dd.mm.yyyy").toString(),
-      dataZakonczenia: dateFormat(data2,"dd.mm.yyyy").toString()
+      dataRozpoczecia: data1.toString(),
+      dataZakonczenia: data2.toString()
     })
     .then(function (response) {
       console.log(response);
@@ -171,7 +162,7 @@ const Formularz = ({ route, navigation }) => {
 
 
     <View>
-
+    <Text style={styles.text2}>Data rozpaczecia</Text>
       {show && (
         <DateTimePicker
       style={styles.dateField}
@@ -184,12 +175,13 @@ const Formularz = ({ route, navigation }) => {
           onChange={onChangeStart}
         />
       )}
-<Button onPress={showDatepickerStart}>dodaj date</Button>
+
       </View>
 <Text>
-  {dateFormat(data1,"dd.mm.yyyy").toString()}
+  {/* {dateFormat(data1,"dd.mm.yyyy").toString()} */}
 </Text>
 <View>
+<Text style={styles.text2}>Data zakonczenia</Text>
 {show && (
         <DateTimePicker
       style={styles.dateField}
@@ -202,10 +194,10 @@ const Formularz = ({ route, navigation }) => {
           onChange={onChangeEnd}
         />
       )}
-<Button onPress={showDatepickerEnd}>dodaj date</Button>
+
       </View>
 <Text>
-  {dateFormat(data2,"dd.mm.yyyy").toString()}
+  {/* {dateFormat(data2,"dd.mm.yyyy").toString()} */}
 </Text>
 
     <Button 

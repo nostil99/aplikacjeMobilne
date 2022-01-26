@@ -6,6 +6,7 @@ import {
 } from 'react-native'
 import { colors } from 'theme'
 import { AutoFocus } from 'expo-camera/build/Camera.types'
+import { auth } from '../../firebase/firebase'
 
 
 const styles = StyleSheet.create({
@@ -78,6 +79,13 @@ const Profile = ({ navigation }) => {
       backgroundColor={colors.darkPurple}
       onPress={() => {
         navigation.navigate('Login', { from: 'Profile' })
+        try{
+        auth.signOut()
+        console.log("proba wyloguj")
+        }catch(error){
+          console.log(error)
+          
+        }
       }}
     />
     </ImageBackground>

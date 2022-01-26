@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from "react";
 import { List, TextInput,Text ,Searchbar} from 'react-native-paper';
-import { Platform, ScrollView, SliderComponent, View } from "react-native";
+import { Platform, ScrollView, SliderComponent, StyleSheet, View } from "react-native";
 import PropTypes from 'prop-types'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from "axios";
+import dateFormat, { masks } from "dateformat";
+
 
 
 
@@ -53,7 +55,7 @@ const Insurance = ({navigation}) => {
 
         return [...new Set(list.filter(checkName))];
     }
-
+    const x = new Date()
     
     return(
         <>
@@ -65,7 +67,11 @@ const Insurance = ({navigation}) => {
             <ScrollView>    
             <List.Section title="lista polis">
                 {filterData().map((item, index) =>
-                    <List.Item onPress={() => {
+                    
+                    
+                    <List.Item style={x>=Date.parse(item.dataZakonczenia)  && {backgroundColor:'red', margin:5}}
+                    
+                    onPress={() => {
                         //console.log(list[index])
                         storeData(item) 
                         //setUbezpieczenie(item)

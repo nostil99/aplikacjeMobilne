@@ -39,6 +39,7 @@ const Login = ({ route, navigation }) => {
   const [login, setLogin] = useState("");
   const [haslo, setHaslo] = useState("");
   const [pokazHaslo, setPokazHaslo] = useState(false);
+  const [errorCode,setErrorCode] = useState()
   const from = route?.params?.from
   return (
   <SafeAreaView style = {styles.root}>
@@ -98,12 +99,20 @@ const Login = ({ route, navigation }) => {
             await signInWithEmailAndPassword(auth, login, haslo)
             navigation.navigate('Home', { from: 'Login' })
           } catch (error) {
-
+               setErrorCode(error.code)
+               console.log(error)
+              if (errorCode === 'auth/wrong-password') {
+                console.log("Wrong password");
+                alert('zle haslo.');
           }
+          if (errorCode === 'auth/too-many-requests') {
+            console.log("zbyt duza ilosc logowan");
+            alert('zbyt duza ilosc logowan.');
+      }
           // setLogin("");
           // setHaslo("");
         }
-      }}>
+      }}}>
     ZALOGUJ</Button>
     
   </SafeAreaView>
