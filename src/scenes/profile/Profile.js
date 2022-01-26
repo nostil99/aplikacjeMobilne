@@ -21,7 +21,8 @@ marginTop: -75,
     marginBottom: 5,
     lineHeight: 40,
     fontWeight: 'bold',
-    marginLeft: 110,
+    marginLeft: "25%",
+    
   },
   zdjecie:{
     width: 200,
@@ -65,18 +66,16 @@ const Profile = ({ navigation }) => {
     
     <Text style={styles.title}>USTAWIENIA KONTA</Text>
     <Button
+    style={styles.przycisk}
       title="Zmień Nazwę"
-      color='rgb(35,29,84)'
-      backgroundColor={colors.darkPurple}
       onPress={()=> {setflaga(true)}}
 
     />
-    <View style={{marginTop: 5}}/>
+   
     <Button
       title="Wyloguj"
-      color='rgb(35,29,84)'
-      style={{marginTop:30}}
-      backgroundColor={colors.darkPurple}
+     
+      style={styles.przycisk}
       onPress={() => {
         navigation.navigate('Login', { from: 'Profile' })
         try{
@@ -90,14 +89,8 @@ const Profile = ({ navigation }) => {
     />
         <Button 
         title="zrob zdjecie"
-        style={
-          {
-          marginTop:30,
-          
-        }
-      }
-
-        color='rgb(35,29,84)'
+        style={styles.przycisk}
+     
       size = "md"
       backgroundColor = {colors.darkPurple} 
       onPress = {() => {

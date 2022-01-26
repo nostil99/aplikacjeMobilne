@@ -91,11 +91,11 @@ export const HomeNavigator = () => (
       name="Details"
       component={Details}
       disabled={true}
-      // options={({ navigation }) => ({
-      //   title: 'Details',
-      //   headerLeft: () => <HeaderLeft navigation={navigation} />,
-      //   headerTitle: () => <HeaderTitle />,
-      // })}
+      options={({ navigation }) => ({
+        title: 'Details',
+        //sheaderLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
     />
 
     <Stack.Screen
@@ -113,11 +113,11 @@ export const HomeNavigator = () => (
       name="Formularz2"
       component={Formularz2}
       disabled={true}
-      // options={({ navigation }) => ({
-      //   title: 'Details',
-      //   headerLeft: () => <HeaderLeft navigation={navigation} />,
-      //   headerTitle: () => <HeaderTitle />,
-      // })}
+      options={({ navigation }) => ({
+        title: 'Details',
+        //headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
     />
   </Stack.Navigator>
 )

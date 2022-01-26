@@ -1,15 +1,6 @@
 {
   "rekordy": [
     {
-      "nazwa": "Ad",
-      "imie": "",
-      "nazwisko": "",
-      "nrpolisy": "Acd",
-      "dataRozpoczecia": "Wed Jan 26 2022 17:24:36 GMT+0100 (CET)",
-      "dataZakonczenia": "Thu Jan 27 2022 17:24:00 GMT+0100 (CET)",
-      "id": 1
-    },
-    {
       "nazwa": "Aad",
       "imie": "",
       "nazwisko": "",
@@ -17,33 +8,6 @@
       "dataRozpoczecia": "Wed Jan 26 2022 17:18:04 GMT+0100 (CET)",
       "dataZakonczenia": "Wed Jan 26 2022 17:18:04 GMT+0100 (CET)",
       "id": 2
-    },
-    {
-      "nazwa": "Fjcjx",
-      "imie": "Znn",
-      "nazwisko": "Znzn",
-      "nrpolisy": "2838:8:",
-      "dataRozpoczecia": "Thu Jan 20 2022 12:33:00 GMT+0100 (CET)",
-      "dataZakonczenia": "Sat Jan 29 2022 12:33:00 GMT+0100 (CET)",
-      "id": 5
-    },
-    {
-      "nazwa": "Dndj",
-      "imie": "Dndjdn",
-      "nazwisko": "Cncj",
-      "nrpolisy": "Dndnd",
-      "dataRozpoczecia": "Wed Jan 26 2022 12:12:26 GMT+0100 (CET)",
-      "dataZakonczenia": "Sun Jan 30 2022 12:12:00 GMT+0100 (CET)",
-      "id": 6
-    },
-    {
-      "nazwa": "Kckfj",
-      "imie": "Cbbxb",
-      "nazwisko": "Jhhh",
-      "nrpolisy": "Jsjdjdndjdj",
-      "dataRozpoczecia": "Wed Jan 26 2022 15:45:48 GMT+0100 (CET)",
-      "dataZakonczenia": "Sun Jan 30 2022 15:45:00 GMT+0100 (CET)",
-      "id": 7
     }
   ]
 }

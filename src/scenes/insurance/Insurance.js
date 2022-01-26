@@ -5,14 +5,21 @@ import PropTypes from 'prop-types'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from "axios";
 import { ngrokHost } from "../../App";
-import { background, backgroundColor, borderRadius, margin } from "styled-system";
-
+import { background, backgroundColor, borderRadius, get, margin } from "styled-system";
+import { useIsFocused } from '@react-navigation/native';
 
 
 
 
 
 const Insurance = ({navigation}) => {
+
+
+    const isFocused = useIsFocused();
+ 
+    useEffect(() => {
+      getData()
+    }, [isFocused]);
 
     const host = Platform.OS === 'ios' ? ngrokHost : ngrokHost
     const axios = require('axios');

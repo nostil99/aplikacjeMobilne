@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     margin: 8,
     width:"80%",
     height:45,
+    borderRadius:20
     
   },
     text: {
@@ -68,7 +69,7 @@ const Details = ({ route, navigation }) => {
         axios.delete(host+'/'+ubez.id).then(resp =>{
             console.log(resp.data);
             navigation.goBack()
-            navigation.goBack()
+            
         }).catch(
           error =>{
             console.log(error)

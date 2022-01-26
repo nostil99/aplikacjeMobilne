@@ -10,6 +10,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { ngrokHost } from '../../App'
+import { borderColor, borderRadius } from 'styled-system'
 const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -30,6 +31,9 @@ const styles = StyleSheet.create({
   },
   input: {
     marginTop: 12.5,
+    width:"80%",
+    borderRadius: 20,
+    borderColor:"blue"
   },
   dateField: {
     width:200,

@@ -10,6 +10,7 @@ import axios from 'axios';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import dateFormat, { masks } from "dateformat";
 import { ngrokHost } from '../../App'
+import { borderColor, borderRadius } from 'styled-system'
 
 
 const styles = StyleSheet.create({
@@ -32,6 +33,15 @@ const styles = StyleSheet.create({
   },
   input: {
     marginTop: 12.5,
+    width:"90%",
+    borderRadius: 15,
+    borderColor: "blue"  
+  },
+  button: {
+    marginTop: 12.5,
+    width:"90%",
+    borderRadius: 25,
+    borderColor: "blue"  
   },
   dateField: {
     width:200,
@@ -204,7 +214,7 @@ const Formularz = ({ route, navigation }) => {
 
 
     <Button 
-      style = {styles.input}
+      style = {styles.button}
       size = "md"
       backgroundColor = {colors.darkPurple} 
       onPress = {() => {
@@ -215,7 +225,7 @@ const Formularz = ({ route, navigation }) => {
     DODAJ POLISĘ</Button>
 
     <Button 
-      style = {styles.input}
+      style = {styles.button}
       size = "md"
       backgroundColor = {colors.darkPurple} 
       onPress = {() => {
@@ -229,7 +239,7 @@ const Formularz = ({ route, navigation }) => {
     WYCZYŚĆ FORMULARZ</Button>
 
     <Button 
-      style = {styles.input}
+      style = {styles.button}
       size = "md"
       backgroundColor = {colors.darkPurple} 
       onPress = {navigation.goBack}>

@@ -33,14 +33,14 @@ const styles = StyleSheet.create({
     color:'white',
 },
 pomocb:{
-  backgroundColor: 'rgb(35,29,84)',
-  marginLeft: 55,
+  backgroundColor: '#0000aacc',
+  marginHorizontal:"10%",
   marginBottom: 20,
-  width: 300,
+  width: "80%",
   height: 60,
   textAlign: 'center',
   paddingTop: 5,
-
+  borderRadius:30
 },
 })
 const URL = (zm)=>{
