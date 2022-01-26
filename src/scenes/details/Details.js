@@ -8,7 +8,8 @@ import { colors } from 'theme'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios'
 import dateFormat, { masks } from "dateformat";
-const host = Platform.OS === 'ios' ? "http://localhost:3001/rekordy" : "http://10.0.2.2:3001/rekordy"
+import { ngrokHost } from '../../App'
+
 const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -24,13 +25,19 @@ const styles = StyleSheet.create({
   input: {
     marginTop: 20,
   },
+    text: {
+    fontSize: 15,
+    marginTop: 10,
+    textAlign: 'left',
+    position: 'relative'
+  },
 
 })
 
 
 const Details = ({ route, navigation }) => {
   const from = route?.params?.from
-
+  const host = Platform.OS === 'ios' ? ngrokHost: ngrokHost
   const [ubez,setUbez] = useState([])
   useEffect(()=>{
       getData()
@@ -69,30 +76,30 @@ const Details = ({ route, navigation }) => {
     <View style={styles.root}>
       <StatusBar barStyle="light-content" />
       {/* <Text style={styles.title}>{`Details (from ${from})`}</Text> */}
+
+      <View styles={{
+        
+      }}>
        <Text style={styles.title
       }>
-        
-      {ubez.nazwa}
+      {"Tytuł "+ubez.nazwa}
      </Text>
-     <Text>
-      {"id: "+ ubez.id}
-     </Text>
-     <Text>
+     <Text style={styles.text}>
       {"Imię: "+ ubez.imie}
      </Text>
-     <Text>
+     <Text style={styles.text}>
       {"Nazwisko: "+  ubez.nazwisko}
      </Text>
-     <Text>
+     <Text style={styles.text}>
       {"Numer polisy: "+  ubez.nrpolisy}
      </Text>
-     <Text>
+     <Text style={styles.text}>
       {"Data startu polisy: "+  dateFormat(Date.parse(ubez.dataRozpoczecia),"dd.mm.yyyy")}
      </Text>
-     <Text>
+     <Text style={styles.text}>
       {"Data zakonczenia polisy: "+  dateFormat(Date.parse(ubez.dataZakonczenia),"dd.mm.yyyy")}
      </Text> 
-
+     </View>
      <Button
         title="Zmodyfikuj"
         color="white"

@@ -4,6 +4,7 @@ import { Platform, ScrollView, SliderComponent, StyleSheet, View } from "react-n
 import PropTypes from 'prop-types'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from "axios";
+import { ngrokHost } from "../../App";
 
 
 
@@ -11,7 +12,7 @@ import axios from "axios";
 
 const Insurance = ({navigation}) => {
 
-    const host = Platform.OS === 'ios' ? "http://localhost:3001/rekordy" : "http://10.0.2.2:3001/rekordy"
+    const host = Platform.OS === 'ios' ? ngrokHost : ngrokHost
     const axios = require('axios');
 
     const getData = () => {

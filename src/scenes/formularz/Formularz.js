@@ -9,6 +9,7 @@ import { Button, Center, Input as TextInput, Stack } from 'native-base'
 import axios from 'axios';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import dateFormat, { masks } from "dateformat";
+import { ngrokHost } from '../../App'
 
 
 const styles = StyleSheet.create({
@@ -46,6 +47,7 @@ const Formularz = ({ route, navigation }) => {
   const onChangeStart = (event, selectedDate) => {
     const currentDate = selectedDate || data1;
     setShow(Platform.OS === 'ios');
+    setShow('date');
     setData1(currentDate);
   };
   const onChangeEnd = (event, selectedDate) => {
@@ -65,8 +67,7 @@ const Formularz = ({ route, navigation }) => {
   const [nrPolisy, setNrPolisy] = useState("");
   const [data1, setData1] = useState(new Date());
   const [data2, setData2] = useState(new Date());
-  const host = Platform.OS === 'ios' ? "http://localhost:3001/rekordy" : "http://10.0.2.2:3001/rekordy"
-
+  const host = Platform.OS === 'ios' ? ngrokHost : ngrokHost
 
   const dodajPolise = () => {
     axios.post(host, {
@@ -200,14 +201,7 @@ const Formularz = ({ route, navigation }) => {
   {/* {dateFormat(data2,"dd.mm.yyyy").toString()} */}
 </Text>
 
-    <Button 
-      style = {styles.input}
-      size = "md"
-      backgroundColor = {colors.darkPurple} 
-      onPress = {() => {
-        navigation.navigate('Camera')
-      }}>
-    ZRÓB ZDJĘCIE</Button>
+
 
     <Button 
       style = {styles.input}

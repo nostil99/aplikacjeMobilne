@@ -9,6 +9,7 @@ import { Button, Input as TextInput, Stack } from 'native-base'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { ngrokHost } from '../../App'
 const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -44,7 +45,8 @@ const Formularz2 = ({ route, navigation }) => {
   const [data1, setData1] = useState(new Date());
   const [data2, setData2] = useState(new Date());
   const [ubez, setUbez] = useState([]);
-  const host = Platform.OS === 'ios' ? "http://localhost:3001/rekordy" : "http://10.0.2.2:3001/rekordy"
+  const host = Platform.OS === 'ios' ? ngrokHost : ngrokHost
+  const [open, setOpen] = useState(false)
 
 
   const [mode, setMode] = useState('date');
@@ -52,12 +54,13 @@ const Formularz2 = ({ route, navigation }) => {
 
   const onChangeStart = (event, selectedDate) => {
     const currentDate = selectedDate || data1;
-    setShow(Platform.OS === 'ios');
+    setShow(true);
+
     setData1(currentDate);
   };
   const onChangeEnd = (event, selectedDate) => {
     const currentDate = selectedDate || data2;
-    setShow(Platform.OS === 'ios');
+    setShow(true);
     setData2(currentDate);
   };
 
@@ -85,6 +88,7 @@ const Formularz2 = ({ route, navigation }) => {
  
     if(nazwa != "" && imie != "" && nazwisko != "" && nrPolisy != "" && data1 < data2 ) {
       axios.put(host + "/" + ubez.id, {
+      
       nazwa: nazwa,
       imie: imie,
       nazwisko: nazwisko,
@@ -181,11 +185,24 @@ const Formularz2 = ({ route, navigation }) => {
 
 
 <View>
-    <Text style={styles.text2}>Data rozpaczecia</Text>
+    {Platform.OS ==="ios"?
+    <Text style={styles.text2}>Data rozpaczecia</Text>:
+    <Button  onPress={() => setOpen(true)}>Data rozpoczecia</Button>
+}
       {show && (
         <DateTimePicker
       style={styles.dateField}
+
+      
         dateFormat="dd.mm.yyyy"
+        open={open}
+        onConfirm={(date) => {
+          setOpen(false)
+          setDate(date)
+        }}
+        onCancel={() => {
+          setOpen(false)
+        }}
           testID="dateTimePickear"
           value={data1}
           mode='date'
@@ -194,13 +211,15 @@ const Formularz2 = ({ route, navigation }) => {
           onChange={onChangeStart}
         />
       )}
-
       </View>
 <Text>
   {/* {dateFormat(data1,"dd.mm.yyyy").toString()} */}
 </Text>
 <View>
-<Text style={styles.text2}>Data zakonczenia</Text>
+{Platform.OS ==="ios"?
+    <Text style={styles.text2}>Data zakonczenia</Text>:
+    <Button  onPress={() => setOpen(true)}>Data zakonczenia</Button>
+}
 {show && (
         <DateTimePicker
       style={styles.dateField}
@@ -213,7 +232,6 @@ const Formularz2 = ({ route, navigation }) => {
           onChange={onChangeEnd}
         />
       )}
-
       </View>
 <Text>
   {/* {dateFormat(data2,"dd.mm.yyyy").toString()} */}

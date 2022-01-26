@@ -40,6 +40,13 @@ const Login = ({ route, navigation }) => {
   const [haslo, setHaslo] = useState("");
   const [pokazHaslo, setPokazHaslo] = useState(false);
   const [errorCode,setErrorCode] = useState()
+  const [pressed,setPressed]=useState(false)
+  const [pressedColor,setPressedColor] = useState(colors.darkPurple)
+  const [isLogin,setIsLogin] = useState(false)
+
+
+
+  
   const from = route?.params?.from
   return (
   <SafeAreaView style = {styles.root}>
@@ -92,23 +99,37 @@ const Login = ({ route, navigation }) => {
     <Button 
       style = {styles.input}
       size = "lg"
-      backgroundColor = {colors.darkPurple} 
+      disabled={pressed}
+      backgroundColor = {pressedColor}
       onPress = {async () => {
         if(login != "" && haslo != "") {
+          setPressed(true)
+          setPressedColor(colors.pink)
           try {
             await signInWithEmailAndPassword(auth, login, haslo)
             navigation.navigate('Home', { from: 'Login' })
+
           } catch (error) {
                setErrorCode(error.code)
                console.log(error)
-              if (errorCode === 'auth/wrong-password') {
+               setPressed(false)
+               setPressedColor(colors.darkPurple)
+               
+              if (errorCode === 'auth/wrong-password') {  
                 console.log("Wrong password");
                 alert('zle haslo.');
+
           }
           if (errorCode === 'auth/too-many-requests') {
             console.log("zbyt duza ilosc logowan");
             alert('zbyt duza ilosc logowan.');
+            
       }
+      if (errorCode === 'auth/invalid-email') {
+        console.log("zly login");
+        alert('zly login');
+      }
+      
           // setLogin("");
           // setHaslo("");
         }

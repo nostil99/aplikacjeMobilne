@@ -88,6 +88,21 @@ const Profile = ({ navigation }) => {
         }
       }}
     />
+        <Button 
+        title="zrob zdjecie"
+        style={
+          {
+          marginTop:30,
+          
+        }
+      }
+
+        color='rgb(35,29,84)'
+      size = "md"
+      backgroundColor = {colors.darkPurple} 
+      onPress = {() => {
+        navigation.navigate('Camera')
+      }}/>
     </ImageBackground>
   </View>
 );}
